@@ -71,18 +71,19 @@
 
   <style>
     :root {
-      --bg-dark: #0a0a0b;
-      --bg-card: #141416;
-      --bg-card-hover: #1c1c20;
-      --gold: #d4af37;
-      --gold-light: #f3e5ab;
-      --gold-dark: #aa820a;
-      --text: #f4f4f5;
-      --text-muted: #a1a1aa;
-      --border: rgba(212, 175, 55, 0.25);
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --disclaimer-bg: #141210;
-      --disclaimer-border: #78350f;
+      --bg-cream: #fbfbfa;
+      --bg-white: #ffffff;
+      --gold-bar: #b38e46;
+      --gold-dark: #8c6a23;
+      --gold-light: #d4af37;
+      --navy-top: #0a192f;
+      --navy-dark: #07101e;
+      --text-main: #222222;
+      --text-muted: #666666;
+      --text-light: #888888;
+      --border-color: #e2e2e0;
+      --disclaimer-bg: #f4f3ef;
+      --disclaimer-border: #b38e46;
     }
 
     * {
@@ -93,21 +94,47 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text);
-      line-height: 1.6;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.5;
       overflow-x: hidden;
     }
 
-    /* Header */
-    header {
-      background: rgba(10, 10, 11, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 1rem 2rem;
+    /* Top Utility Bar */
+    .top-utility-bar {
+      background-color: var(--navy-top);
+      color: #ffffff;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1.5rem;
+      font-weight: 600;
+    }
+
+    .top-utility-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .top-utility-bar a:hover {
+      opacity: 0.8;
+    }
+
+    /* Header Logo Area */
+    header.main-header {
+      background-color: var(--bg-white);
+      padding: 1.8rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-content {
+      max-width: 1240px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -115,88 +142,113 @@
 
     .brand {
       text-decoration: none;
-      display: flex;
-      flex-direction: column;
+      display: inline-block;
     }
 
     .brand-title {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.8rem;
+      font-size: 2.8rem;
       font-weight: 900;
       letter-spacing: -0.02em;
-      color: #fff;
+      color: #1a2332;
+      line-height: 1;
     }
 
     .brand-title span {
-      color: var(--gold);
+      color: var(--gold-bar);
     }
 
     .brand-sub {
       font-size: 0.65rem;
       color: var(--text-muted);
-      letter-spacing: 0.25em;
+      letter-spacing: 0.38em;
       text-transform: uppercase;
-      margin-top: -2px;
+      display: block;
+      margin-top: 4px;
+      font-weight: 600;
     }
 
-    nav {
+    /* Search Box */
+    .search-box {
       display: flex;
-      gap: 1.8rem;
       align-items: center;
     }
 
-    .nav-link {
-      color: var(--text-muted);
-      text-decoration: none;
+    .search-box input {
+      padding: 0.45rem 0.8rem;
+      border: 1px solid #ccc;
       font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: color 0.2s;
+      outline: none;
+      width: 180px;
+      background: #fafafa;
     }
 
-    .nav-link:hover {
-      color: var(--gold);
-    }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: #000;
-      font-weight: 700;
-      padding: 0.6rem 1.2rem;
-      border-radius: 4px;
-      border: none;
+    .search-box button {
+      background: #eee;
+      border: 1px solid #ccc;
+      border-left: none;
+      padding: 0.45rem 0.7rem;
       cursor: pointer;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: transform 0.2s, box-shadow 0.2s;
+      color: #555;
+    }
+
+    /* Navigation Bar */
+    .main-nav {
+      background-color: var(--gold-bar);
+      border-top: 1px solid rgba(0,0,0,0.08);
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: #ffffff;
       text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.1rem;
       display: inline-block;
+      transition: background-color 0.2s, color 0.2s;
+      white-space: nowrap;
     }
 
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    .nav-link:hover, .nav-link.active {
+      background-color: rgba(0,0,0,0.12);
+      color: #fff;
     }
 
-    /* Live Ticker Bar */
+    .nav-divider {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.8rem;
+    }
+
+    /* Live News Ticker */
     .ticker-wrap {
       width: 100%;
-      background: #000;
-      border-bottom: 1px solid var(--border-subtle);
+      background: #111;
+      border-bottom: 1px solid var(--border-color);
       overflow: hidden;
-      height: 38px;
+      height: 36px;
       display: flex;
       align-items: center;
     }
 
     .ticker-head {
-      background: var(--gold);
-      color: #000;
+      background: var(--gold-bar);
+      color: #fff;
       font-weight: 800;
       font-size: 0.7rem;
-      padding: 0 1rem;
+      padding: 0 1.2rem;
       height: 100%;
       display: flex;
       align-items: center;
@@ -214,12 +266,13 @@
 
     .ticker-item {
       font-size: 0.8rem;
-      color: var(--text-muted);
+      color: #ddd;
       padding: 0 2rem;
     }
 
     .ticker-item span {
-      color: var(--gold-light);
+      color: var(--gold-bar);
+      font-weight: bold;
       margin-right: 0.5rem;
     }
 
@@ -228,344 +281,407 @@
       100% { transform: translate3d(-50%, 0, 0); }
     }
 
-    /* Layout Container */
-    main {
-      max-width: 1280px;
+    /* Main Container */
+    .page-container {
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem;
+      padding: 1.8rem 1rem;
     }
 
-    /* Hero Section */
-    .hero {
+    /* Layout Grid */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2rem;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      position: relative;
+      height: 420px;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      border-radius: 2px;
+      margin-bottom: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .hero-content {
+      color: #ffffff;
       text-align: center;
-      padding: 3.5rem 1rem 3rem 1rem;
-      background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
-      border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 3rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .hero-badge {
-      display: inline-block;
-      background: rgba(212, 175, 55, 0.15);
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.25rem 0.8rem;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero h1 {
+    .hero-title {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 3.5rem;
+      font-size: 2.2rem;
       font-weight: 400;
-      color: #fff;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-      background: linear-gradient(180deg, #ffffff 0%, #d4af37 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.02em;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.8);
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
     }
 
-    .hero p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 760px;
-      margin: 0 auto 2rem auto;
+    .hero-subtitle {
+      font-size: 1.15rem;
+      font-family: Georgia, serif;
       font-weight: 300;
+      opacity: 0.95;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
     }
 
-    /* Section Headers */
-    .section-header {
+    /* Section Headings */
+    .section-title-wrap {
+      border-bottom: 2px solid #111;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.3rem;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 1.8rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.8rem;
     }
 
     .section-title {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.8rem;
-      color: #fff;
-      font-weight: 400;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #111;
     }
 
-    .section-title span {
-      color: var(--gold);
-    }
-
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    /* Grid Layouts */
-    .grid-3 {
+    /* Story Grid */
+    .story-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 1.8rem;
-      margin-bottom: 4rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    /* Cards */
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      overflow: hidden;
+    .story-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s, border-color 0.25s;
+      transition: transform 0.2s;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold);
-      background: var(--bg-card-hover);
+    .story-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
-    .card-img {
-      height: 220px;
+    .story-img {
+      height: 160px;
       background-size: cover;
       background-position: center;
       position: relative;
     }
 
-    .card-tag {
-      position: absolute;
-      top: 1rem; right: 1rem;
-      background: rgba(10, 10, 11, 0.9);
-      color: var(--gold);
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 0.25rem 0.6rem;
-      border-radius: 3px;
-      border: 1px solid var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .card-body {
-      padding: 1.5rem;
+    .story-body {
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
 
-    .card-meta {
-      color: var(--gold);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-title {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.25rem;
-      color: #fff;
-      margin-bottom: 0.8rem;
-      line-height: 1.35;
-    }
-
-    .card-text {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      line-height: 1.5;
-      margin-bottom: 1.2rem;
-    }
-
-    .card-link {
-      margin-top: auto;
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      cursor: pointer;
-    }
-
-    /* Rodeo Drive Directory Styling */
-    .retail-section {
-      background: rgba(20, 20, 22, 0.6);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .retail-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.8rem;
-    }
-
-    .retail-cat {
-      background: var(--bg-dark);
-      border: 1px solid var(--border-subtle);
-      padding: 1.5rem;
-      border-radius: 6px;
-    }
-
-    .retail-cat-title {
-      color: var(--gold);
+    .story-headline {
       font-family: Georgia, serif;
-      font-size: 1.1rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #111;
+      margin-bottom: 0.6rem;
+      text-decoration: none;
+    }
+
+    .story-headline:hover {
+      color: var(--gold-bar);
+    }
+
+    .story-excerpt {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
       margin-bottom: 1rem;
     }
 
-    .retail-list {
+    .btn-read {
+      margin-top: auto;
+      color: var(--gold-bar);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-read:hover {
+      color: var(--gold-dark);
+    }
+
+    /* Sidebar Styling */
+    .sidebar-widget {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 1.2rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    .widget-title {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid #111;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .social-thumb {
+      aspect-ratio: 1;
+      background-size: cover;
+      background-position: center;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .social-thumb:hover {
+      opacity: 0.85;
+    }
+
+    /* Rodeo Drive Section */
+    .rodeo-box {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .rodeo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .rodeo-cat-title {
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold-bar);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .rodeo-list {
       list-style: none;
     }
 
-    .retail-list li {
-      margin-bottom: 0.8rem;
-      font-size: 0.85rem;
+    .rodeo-list li {
+      margin-bottom: 0.7rem;
+      font-size: 0.82rem;
     }
 
-    .retail-list a {
-      color: #fff;
-      text-decoration: none;
+    .rodeo-list a {
+      color: #222;
       font-weight: 600;
-      transition: color 0.2s;
+      text-decoration: none;
     }
 
-    .retail-list a:hover {
-      color: var(--gold);
+    .rodeo-list a:hover {
+      color: var(--gold-bar);
     }
 
-    .retail-address {
+    .rodeo-address {
       display: block;
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      margin-top: 0.1rem;
+      color: #777;
+      font-size: 0.72rem;
     }
 
-    /* Doctor Spotlight Cards */
+    /* Doctor Roster */
     .doctor-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      padding: 1.8rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 1.2rem;
       display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-      transition: border-color 0.25s;
-    }
-
-    .doctor-card:hover {
-      border-color: var(--gold);
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+      align-items: center;
     }
 
     .doctor-avatar {
-      width: 90px;
-      height: 90px;
+      width: 75px;
+      height: 75px;
       border-radius: 50%;
       background-size: cover;
       background-position: center;
-      border: 2px solid var(--gold);
+      border: 2px solid var(--gold-bar);
       flex-shrink: 0;
     }
 
-    .doctor-info h3 {
+    .doctor-info h4 {
       font-family: Georgia, serif;
-      color: #fff;
-      font-size: 1.2rem;
-      margin-bottom: 0.2rem;
+      font-size: 1.05rem;
+      color: #111;
     }
 
     .doctor-spec {
-      color: var(--gold);
-      font-size: 0.75rem;
+      color: var(--gold-bar);
+      font-size: 0.72rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.3rem;
     }
 
     .doctor-desc {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 0.5rem;
     }
 
-    /* Contact Section */
-    .contact-box {
-      background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, transparent 100%);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 3rem 2rem;
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .contact-email-link {
-      color: var(--gold);
-      font-size: 1.2rem;
+    .btn-gold-sm {
+      background: var(--gold-bar);
+      color: #fff;
+      font-size: 0.7rem;
       font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      margin: 1rem 0;
-      border-bottom: 2px dashed var(--gold);
-    }
-
-    .contact-email-link:hover {
-      color: var(--gold-light);
-    }
-
-    /* Detailed Legal Disclaimer Section (Bottom of Page) */
-    .legal-disclaimer-box {
-      background: var(--disclaimer-bg);
-      border: 1px solid var(--disclaimer-border);
-      border-radius: 6px;
-      padding: 2rem;
-      margin-bottom: 3rem;
-      font-size: 0.82rem;
-      color: #d1d5db;
-      line-height: 1.6;
-    }
-
-    .legal-disclaimer-box h4 {
-      color: var(--gold);
-      font-size: 0.95rem;
-      margin-bottom: 0.6rem;
+      padding: 0.3rem 0.7rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    /* Modals */
+    .btn-gold-sm:hover {
+      background: var(--gold-dark);
+    }
+
+    /* Contact & Feature Banner */
+    .contact-banner {
+      background: linear-gradient(135deg, #1a2332, #0a192f);
+      color: #fff;
+      padding: 2rem;
+      border-radius: 2px;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-banner h3 {
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: var(--gold-bar);
+    }
+
+    .contact-banner p {
+      font-size: 0.88rem;
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto 1.2rem auto;
+    }
+
+    .contact-email {
+      color: var(--gold-bar);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: underline;
+    }
+
+    /* Legal Disclaimer */
+    .legal-disclaimer {
+      background: var(--disclaimer-bg);
+      border: 1px solid var(--disclaimer-border);
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .legal-disclaimer h5 {
+      color: var(--gold-dark);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-dark);
+      color: #888888;
+      border-top: 3px solid var(--gold-bar);
+      padding: 2rem;
+      font-size: 0.78rem;
+    }
+
+    .footer-content {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .sponsor-logos {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .sponsor-badge {
+      background: #ffffff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #111;
+      letter-spacing: 0.05em;
+    }
+
+    /* Modal Styling */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.90);
-      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.85);
       display: none;
       align-items: center;
       justify-content: center;
-      z-index: 200;
+      z-index: 999;
       padding: 1.5rem;
-      overflow-y: auto;
     }
 
     .modal-overlay.active {
@@ -573,12 +689,11 @@
     }
 
     .modal {
-      background: var(--bg-card);
-      border: 1px solid var(--gold);
-      border-radius: 8px;
-      max-width: 650px;
+      background: #ffffff;
+      border: 2px solid var(--gold-bar);
+      max-width: 600px;
       width: 100%;
-      padding: 2.2rem;
+      padding: 2rem;
       position: relative;
       max-height: 90vh;
       overflow-y: auto;
@@ -586,121 +701,119 @@
 
     .modal-close {
       position: absolute;
-      top: 1rem; right: 1rem;
+      top: 1rem;
+      right: 1rem;
       background: none;
       border: none;
-      color: var(--text-muted);
       font-size: 1.5rem;
       cursor: pointer;
+      color: #555;
     }
 
-    .article-modal-meta {
-      color: var(--gold);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-
-    .article-modal-title {
+    .modal-title {
       font-family: Georgia, serif;
-      font-size: 1.8rem;
-      color: #fff;
-      margin-bottom: 1.2rem;
-      line-height: 1.25;
-    }
-
-    .article-modal-content p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #111;
     }
 
     .form-group {
-      margin-bottom: 1.2rem;
-      text-align: left;
+      margin-bottom: 1rem;
     }
 
     .form-group label {
       display: block;
       font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
       font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: #333;
     }
 
-    .form-group input, .form-group select, .form-group textarea {
+    .form-group input, .form-group textarea {
       width: 100%;
-      padding: 0.75rem 0.9rem;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
-      border-radius: 4px;
-      color: #fff;
-      outline: none;
-      font-size: 0.9rem;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 2px;
     }
 
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: var(--gold);
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+      }
+      .story-grid, .rodeo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    /* Footer */
-    footer {
-      background: #050506;
-      border-top: 1px solid var(--border);
-      padding: 3rem 2rem 2rem 2rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .footer-content {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .footer-col {
-      max-width: 380px;
-    }
-
-    @media (max-width: 768px) {
-      header { padding: 0.8rem 1rem; }
-      nav { display: none; }
-      .hero h1 { font-size: 2.3rem; }
-      .doctor-card { flex-direction: column; }
+    @media (max-width: 600px) {
+      .story-grid, .rodeo-grid {
+        grid-template-columns: 1fr;
+      }
+      .brand-title {
+        font-size: 2rem;
+      }
+      .nav-link {
+        padding: 0.6rem 0.6rem;
+        font-size: 0.72rem;
+      }
+      .top-utility-bar {
+        justify-content: center;
+      }
+      .hero-title {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <a href="#" class="brand">
-      <span class="brand-title">90210<span>DR</span>.com</span>
-      <span class="brand-sub">The Pulse of Beverly Hills</span>
-    </a>
+  <!-- Top Utility Bar -->
+  <div class="top-utility-bar">
+    <div>LOS ANGELES, CA | OCTOBER 26, 2026</div>
+    <div><a href="mailto:All4aim@hotmail.com">LOGIN / CONTACT</a></div>
+  </div>
 
-    <nav>
-      <a href="#news" class="nav-link">News Desk</a>
-      <a href="#dining" class="nav-link">Hotspots & Dining</a>
-      <a href="#rodeo" class="nav-link">Rodeo Drive</a>
-      <a href="#doctors" class="nav-link">Doctor Directory</a>
-    </nav>
+  <!-- Header Logo Area -->
+  <header class="main-header">
+    <div class="header-content">
+      <a href="#" class="brand">
+        <span class="brand-title">90210<span>DR</span>.com</span>
+        <span class="brand-sub">THE PULSE OF BEVERLY HILLS</span>
+      </a>
 
-    <div>
-      <a href="mailto:All4aim@hotmail.com" class="btn-gold">Contact Us Now</a>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <button>&#128091;</button>
+      </div>
     </div>
   </header>
 
-  <!-- Real-Time News Ticker -->
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-link active">HOME</a>
+      <span class="nav-divider">|</span>
+      <a href="#news" class="nav-link">EXCLUSIVE NEWS</a>
+      <span class="nav-divider">|</span>
+      <a href="#news" class="nav-link">EVENTS</a>
+      <span class="nav-divider">|</span>
+      <a href="#dining" class="nav-link">DINING</a>
+      <span class="nav-divider">|</span>
+      <a href="#news" class="nav-link">REAL ESTATE</a>
+      <span class="nav-divider">|</span>
+      <a href="#rodeo" class="nav-link">FASHION</a>
+      <span class="nav-divider">|</span>
+      <a href="#dining" class="nav-link">NIGHTLIFE</a>
+      <span class="nav-divider">|</span>
+      <a href="#doctors" class="nav-link">DIRECTORY</a>
+      <span class="nav-divider">|</span>
+      <a href="#doctors" class="nav-link">WELLNESS</a>
+    </div>
+  </nav>
+
+  <!-- Live News Ticker -->
   <div class="ticker-wrap">
     <div class="ticker-head">Live 90210 Updates</div>
     <div class="ticker">
@@ -709,415 +822,351 @@
       <div class="ticker-item"><span>[RODEO]</span> Chanel flagship expands private salon quarters for VIP styling.</div>
       <div class="ticker-item"><span>[REAL ESTATE]</span> Historic Carolwood Drive estate transferred in $42M off-market deal.</div>
       <div class="ticker-item"><span>[AESTHETICS]</span> Pre-awards season zero-downtime laser treatments surge in demand.</div>
-      <!-- Duplicate for infinite loop -->
+      <!-- Duplicate for continuous scrolling -->
       <div class="ticker-item"><span>[CIVIC]</span> City Council reviews enhanced safety measures for Golden Triangle commercial district.</div>
       <div class="ticker-item"><span>[DINING]</span> Private dining room bookings double at Canon Drive power lunch spots.</div>
     </div>
   </div>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <span class="hero-badge">Independent Beverly Hills Briefing</span>
-      <h1>BEVERLY HILLS 90210DR.COM</h1>
-      <p>Real-time municipal news, power dining hotspots, Rodeo Drive luxury flagships, and editorial spotlights on world-class aesthetic physicians.</p>
+  <div class="page-container">
+    <div class="layout-grid">
       
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="#news" class="btn-gold">Read News Desk</a>
-        <button class="btn-gold" style="background: transparent; border: 1px solid var(--gold); color: var(--gold);" onclick="openModal('contactModal')">Inquire For Feature</button>
-      </div>
-    </section>
-
-    <!-- News Desk Section -->
-    <section id="news">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Beverly Hills <span>News Desk</span></h2>
-          <p class="section-desc">Real-time local reporting, civic policy, and community alerts for 90210 residents.</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <!-- Article 1 -->
-        <article class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80');">
-            <span class="card-tag">Civic Update</span>
+      <!-- Main Content Area -->
+      <main>
+        
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+          <div class="hero-content">
+            <h1 class="hero-title">EXPERIENCE THE PULSE:</h1>
+            <p class="hero-subtitle">The Ultimate Guide to the 90210</p>
           </div>
-          <div class="card-body">
-            <div class="card-meta">City Hall • Real-Time</div>
-            <h3 class="card-title">Beverly Hills Approves New Security Infrastructure Upgrades</h3>
-            <p class="card-text">Municipal officials announce expanded private patrol partnerships and camera network enhancements across Wilshire and Rodeo Drive corridors.</p>
-            <span class="card-link" onclick="openModal('newsModal1')">Read Full Story &rarr;</span>
+        </section>
+
+        <!-- Featured Stories Section -->
+        <section id="news">
+          <div class="section-title-wrap">
+            <h2 class="section-title">FEATURED STORIES</h2>
           </div>
-        </article>
 
-        <!-- Article 2 -->
-        <article class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80');">
-            <span class="card-tag">Real Estate</span>
+          <div class="story-grid">
+            <!-- Story 1 -->
+            <article class="story-card">
+              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80');"></div>
+              <div class="story-body">
+                <a href="javascript:void(0)" onclick="openModal('modalStory1')" class="story-headline">Inside: The Summer's Most Exclusive 90210 Parties</a>
+                <p class="story-excerpt">A rare look inside private galas, charity dinners, and secret estate gatherings shaping Beverly Hills high society.</p>
+                <a href="javascript:void(0)" onclick="openModal('modalStory1')" class="btn-read">Read Article &rarr;</a>
+              </div>
+            </article>
+
+            <!-- Story 2 -->
+            <article class="story-card">
+              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80');"></div>
+              <div class="story-body">
+                <a href="javascript:void(0)" onclick="openModal('modalStory2')" class="story-headline">Where to Dine: The New Michelin Stars in Beverly Hills</a>
+                <p class="story-excerpt">From Canon Drive to Wilshire, discover the top dining tables where deals are struck over world-class cuisine.</p>
+                <a href="javascript:void(0)" onclick="openModal('modalStory2')" class="btn-read">Read Article &rarr;</a>
+              </div>
+            </article>
+
+            <!-- Story 3 -->
+            <article class="story-card">
+              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80');"></div>
+              <div class="story-body">
+                <a href="javascript:void(0)" onclick="openModal('modalStory3')" class="story-headline">Luxury Living: The Hottest Properties Currently on the Market</a>
+                <p class="story-excerpt">An exclusive preview of prime Carolwood Drive and Trousdale Estates architectural masterpieces available today.</p>
+                <a href="javascript:void(0)" onclick="openModal('modalStory3')" class="btn-read">Read Article &rarr;</a>
+              </div>
+            </article>
           </div>
-          <div class="card-body">
-            <div class="card-meta">Society & Living</div>
-            <h3 class="card-title">Inside the Off-Market Estate Deals Shaping North Carolwood</h3>
-            <p class="card-text">Hollywood studio executives and international collectors continue quietly trading trophy residential properties in Beverly Hills proper.</p>
-            <span class="card-link" onclick="openModal('newsModal2')">Read Full Story &rarr;</span>
+        </section>
+
+        <!-- VIP Dining & Hotspots Section -->
+        <section id="dining">
+          <div class="section-title-wrap">
+            <h2 class="section-title">VIP DINING & HOTSPOTS</h2>
           </div>
-        </article>
 
-        <!-- Article 3 -->
-        <article class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80');">
-            <span class="card-tag">Red Carpet Prep</span>
+          <div class="story-grid">
+            <article class="story-card">
+              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=600&q=80');"></div>
+              <div class="story-body">
+                <h3 class="story-headline">The Power Tables: Canon & Wilshire</h3>
+                <p class="story-excerpt">The preferred seating locations for entertainment executives and global investors.</p>
+                <a href="javascript:void(0)" onclick="openModal('modalContact')" class="btn-read">View Guide &rarr;</a>
+              </div>
+            </article>
+
+            <article class="story-card">
+              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80');"></div>
+              <div class="story-body">
+                <h3 class="story-headline">The Polo Lounge After Hours</h3>
+                <p class="story-excerpt">An insider look into evening cocktails, discreet entryways, and legendary hotel lounges.</p>
+                <a href="javascript:void(0)" onclick="openModal('modalContact')" class="btn-read">View Guide &rarr;</a>
+              </div>
+            </article>
+
+            <article class="story-card">
+              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80');"></div>
+              <div class="story-body">
+                <h3 class="story-headline">Red Carpet Glow Protocols</h3>
+                <p class="story-excerpt">Non-invasive lymphatic prep and recovery protocols used 72 hours before galas.</p>
+                <a href="javascript:void(0)" onclick="openModal('modalContact')" class="btn-read">Read Article &rarr;</a>
+              </div>
+            </article>
           </div>
-          <div class="card-body">
-            <div class="card-meta">Lifestyle & Science</div>
-            <h3 class="card-title">How Entertainment Leaders Prep 72 Hours Before Major Galas</h3>
-            <p class="card-text">A look at non-invasive lymphatic drainage, vascular lasers, and hyperbaric recovery protocols favored along Bedford Drive.</p>
-            <span class="card-link" onclick="openModal('newsModal3')">Read Full Story &rarr;</span>
+        </section>
+
+        <!-- Rodeo Drive Retail Directory Section -->
+        <section id="rodeo">
+          <div class="section-title-wrap">
+            <h2 class="section-title">RODEO DRIVE RETAIL & SHOPPING</h2>
           </div>
-        </article>
-      </div>
-    </section>
 
-    <!-- Dining & Hotspots Section -->
-    <section id="dining">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">VIP Dining & <span>Hotspots</span></h2>
-          <p class="section-desc">The power lunch institutions, hidden speakeasies, and coveted tables of 90210.</p>
-        </div>
-      </div>
+          <div class="rodeo-box">
+            <div class="rodeo-grid">
+              <div>
+                <h3 class="rodeo-cat-title">Haute Couture & Fashion</h3>
+                <ul class="rodeo-list">
+                  <li>
+                    <a href="https://www.chanel.com" target="_blank" rel="noopener">Chanel Beverly Hills</a>
+                    <span class="rodeo-address">400 N Rodeo Dr • (310) 278-5500</span>
+                  </li>
+                  <li>
+                    <a href="https://www.gucci.com" target="_blank" rel="noopener">Gucci Rodeo Drive</a>
+                    <span class="rodeo-address">347 N Rodeo Dr • (310) 278-3451</span>
+                  </li>
+                  <li>
+                    <a href="https://www.louisvuitton.com" target="_blank" rel="noopener">Louis Vuitton</a>
+                    <span class="rodeo-address">295 N Rodeo Dr • (310) 859-0457</span>
+                  </li>
+                </ul>
+              </div>
 
-      <div class="grid-2">
-        <!-- Dining Item 1 -->
-        <div class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80');">
-            <span class="card-tag">Power Lunch</span>
+              <div>
+                <h3 class="rodeo-cat-title">Fine Jewelry & Watches</h3>
+                <ul class="rodeo-list">
+                  <li>
+                    <a href="https://www.cartier.com" target="_blank" rel="noopener">Cartier Beverly Hills</a>
+                    <span class="rodeo-address">370 N Rodeo Dr • (310) 275-4272</span>
+                  </li>
+                  <li>
+                    <a href="https://www.vancleefarpels.com" target="_blank" rel="noopener">Van Cleef & Arpels</a>
+                    <span class="rodeo-address">300 N Rodeo Dr • (310) 271-6260</span>
+                  </li>
+                  <li>
+                    <a href="https://www.tiffany.com" target="_blank" rel="noopener">Tiffany & Co.</a>
+                    <span class="rodeo-address">210 N Rodeo Dr • (310) 273-8880</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="rodeo-cat-title">Shopping Enclaves</h3>
+                <ul class="rodeo-list">
+                  <li>
+                    <a href="https://www.2rodeo.com" target="_blank" rel="noopener">Two Rodeo Drive</a>
+                    <span class="rodeo-address">Via Rodeo & Wilshire Blvd</span>
+                  </li>
+                  <li>
+                    <a href="https://www.saksfifthavenue.com" target="_blank" rel="noopener">Saks Fifth Avenue</a>
+                    <span class="rodeo-address">9600 Wilshire Blvd</span>
+                  </li>
+                  <li>
+                    <a href="https://www.rodeodrive-bh.com" target="_blank" rel="noopener">Rodeo Drive Committee</a>
+                    <span class="rodeo-address">Official Directory & Events</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <div class="card-meta">Canon Drive & Wilshire</div>
-            <h3 class="card-title">The Power Tables: Where Deals Are Closed Over Lunch</h3>
-            <p class="card-text">From Spago's patio to the private dining alcoves at Cipriani and Funke, we review the top seating locations preferred by entertainment agents and executives.</p>
-            <span class="card-link" onclick="openModal('diningModal1')">View Hotspot Guide &rarr;</span>
+        </section>
+
+        <!-- Doctor Roster & Spotlight Section -->
+        <section id="doctors">
+          <div class="section-title-wrap">
+            <h2 class="section-title">BEVERLY HILLS DOCTOR ROSTER</h2>
           </div>
-        </div>
 
-        <!-- Dining Item 2 -->
-        <div class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80');">
-            <span class="card-tag">Private Lounges</span>
+          <div class="doctor-card">
+            <div class="doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80');"></div>
+            <div class="doctor-info">
+              <h4>Facial Plastic Surgery Innovations</h4>
+              <div class="doctor-spec">Bedford Drive Medical Corridor</div>
+              <p class="doctor-desc">Highlighting non-invasive deep-plane facelift innovations and natural restoration techniques.</p>
+              <button class="btn-gold-sm" onclick="openModal('modalContact')">Inquire For Feature</button>
+            </div>
           </div>
-          <div class="card-body">
-            <div class="card-meta">Sunset Boulevard</div>
-            <h3 class="card-title">The Polo Lounge & Beverly Hills Hotel After-Hours</h3>
-            <p class="card-text">An insider guide to discreet evening gatherings, discreet security entrances, and timeless cocktail culture for high-society residents.</p>
-            <span class="card-link" onclick="openModal('diningModal2')">View Hotspot Guide &rarr;</span>
+
+          <div class="doctor-card">
+            <div class="doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1594824813566-788b15d0335e?auto=format&fit=crop&w=400&q=80');"></div>
+            <div class="doctor-info">
+              <h4>Aesthetic Dermatology & Cellular Renewal</h4>
+              <div class="doctor-spec">Wilshire Boulevard Practice</div>
+              <p class="doctor-desc">Focusing on zero-downtime biostimulatory injectables and customized collagen glow treatments.</p>
+              <button class="btn-gold-sm" onclick="openModal('modalContact')">Inquire For Feature</button>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Rodeo Drive Retail Directory Section -->
-    <section id="rodeo" class="retail-section">
-      <div class="section-header" style="border-bottom: none; margin-bottom: 0;">
-        <div>
-          <h2 class="section-title">Rodeo Drive <span>Retail & Shopping</span></h2>
-          <p class="section-desc">Direct directory to world-renowned fashion houses, high-jewelry salons, and private shopping suites in Beverly Hills.</p>
-        </div>
-      </div>
+        <!-- Contact Banner -->
+        <section class="contact-banner">
+          <h3>Contact 90210Dr.com</h3>
+          <p>Have a news tip, high-society event notice, or wish to inquire about an editorial physician spotlight feature?</p>
+          <p><a href="mailto:All4aim@hotmail.com" class="contact-email">All4aim@hotmail.com</a></p>
+          <button class="btn-gold-sm" style="margin-top: 1rem; padding: 0.5rem 1.2rem; font-size: 0.8rem;" onclick="openModal('modalContact')">Send Message</button>
+        </section>
 
-      <div class="retail-grid">
-        <!-- Haute Couture Category -->
-        <div class="retail-cat">
-          <h3 class="retail-cat-title">Haute Couture & Fashion</h3>
-          <ul class="retail-list">
-            <li>
-              <a href="https://www.chanel.com" target="_blank" rel="noopener">Chanel Beverly Hills</a>
-              <span class="retail-address">400 N Rodeo Dr • (310) 278-5500</span>
-            </li>
-            <li>
-              <a href="https://www.gucci.com" target="_blank" rel="noopener">Gucci Rodeo Drive</a>
-              <span class="retail-address">347 N Rodeo Dr • (310) 278-3451</span>
-            </li>
-            <li>
-              <a href="https://www.louisvuitton.com" target="_blank" rel="noopener">Louis Vuitton Beverly Hills</a>
-              <span class="retail-address">295 N Rodeo Dr • (310) 859-0457</span>
-            </li>
-            <li>
-              <a href="https://www.dior.com" target="_blank" rel="noopener">Dior Boutique</a>
-              <span class="retail-address">309 N Rodeo Dr • (310) 859-4700</span>
-            </li>
-            <li>
-              <a href="https://www.hermes.com" target="_blank" rel="noopener">Hermès Rodeo Drive</a>
-              <span class="retail-address">428 N Rodeo Dr • (310) 278-6440</span>
-            </li>
-          </ul>
-        </div>
+        <!-- Legal Disclaimer -->
+        <section class="legal-disclaimer">
+          <h5>Full Legal, Medical & Endorsement Disclaimer</h5>
+          <p>The content presented on 90210Dr.com—including text, graphics, images, directories, doctor spotlights, and news reports—is published strictly for informational, educational, and entertainment purposes only. <strong>90210Dr.com is an independent digital media platform and is not a medical organization, healthcare provider, or licensed referral agency.</strong> Nothing contained on this website is intended to be used as medical advice, diagnosis, or treatment recommendations. Always seek the advice of a qualified, board-certified physician or other licensed healthcare provider with any questions you may have regarding a medical condition or aesthetic procedure.</p>
+        </section>
 
-        <!-- Fine Jewelry Category -->
-        <div class="retail-cat">
-          <h3 class="retail-cat-title">Fine Jewelry & Watches</h3>
-          <ul class="retail-list">
-            <li>
-              <a href="https://www.cartier.com" target="_blank" rel="noopener">Cartier Beverly Hills</a>
-              <span class="retail-address">370 N Rodeo Dr • (310) 275-4272</span>
-            </li>
-            <li>
-              <a href="https://www.vancleefarpels.com" target="_blank" rel="noopener">Van Cleef & Arpels</a>
-              <span class="retail-address">300 N Rodeo Dr • (310) 271-6260</span>
-            </li>
-            <li>
-              <a href="https://www.tiffany.com" target="_blank" rel="noopener">Tiffany & Co.</a>
-              <span class="retail-address">210 N Rodeo Dr • (310) 273-8880</span>
-            </li>
-            <li>
-              <a href="https://www.harrywinston.com" target="_blank" rel="noopener">Harry Winston</a>
-              <span class="retail-address">310 N Rodeo Dr • (310) 271-8554</span>
-            </li>
-          </ul>
-        </div>
+      </main>
 
-        <!-- Luxury Shopping Centers Category -->
-        <div class="retail-cat">
-          <h3 class="retail-cat-title">Shopping Enclaves</h3>
-          <ul class="retail-list">
-            <li>
-              <a href="https://www.2rodeo.com" target="_blank" rel="noopener">Two Rodeo Drive</a>
-              <span class="retail-address">Via Rodeo & Wilshire Blvd</span>
-            </li>
-            <li>
-              <a href="https://www.saksfifthavenue.com" target="_blank" rel="noopener">Saks Fifth Avenue</a>
-              <span class="retail-address">9600 Wilshire Blvd</span>
-            </li>
-            <li>
-              <a href="https://www.rodeodrive-bh.com" target="_blank" rel="noopener">Rodeo Drive Committee</a>
-              <span class="retail-address">Official Directory & Event Calendar</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Doctor Roster & Editorial Spotlight Section -->
-    <section id="doctors">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Beverly Hills <span>Doctor Roster</span></h2>
-          <p class="section-desc">Complimentary editorial spotlights on board-certified medical specialists, plastic surgeons, dermatologists, and longevity physicians in 90210.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <!-- Doctor Profile 1 -->
-        <div class="doctor-card">
-          <div class="doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80');"></div>
-          <div class="doctor-info">
-            <h3>Editorial Spotlight: Facial Plastic Surgery</h3>
-            <div class="doctor-spec">Bedford Drive Medical Corridor</div>
-            <p class="doctor-desc">Highlighting non-invasive deep-plane facelift innovations and natural structure restoration techniques preferred by camera talent.</p>
-            <button class="btn-gold" style="font-size: 0.7rem; padding: 0.4rem 0.8rem;" onclick="openModal('contactModal')">Inquire For Feature</button>
+      <!-- Sidebar -->
+      <aside>
+        <!-- Social Pulse Widget 1 -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">SOCIAL PULSE</h3>
+          <div style="font-size: 0.8rem; margin-bottom: 0.8rem; color: #555; display: flex; align-items: center; gap: 0.4rem;">
+            <strong>Instagram</strong> <span style="color: #888;">#90210DR</span>
           </div>
-        </div>
-
-        <!-- Doctor Profile 2 -->
-        <div class="doctor-card">
-          <div class="doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1594824813566-788b15d0335e?auto=format&fit=crop&w=400&q=80');"></div>
-          <div class="doctor-info">
-            <h3>Editorial Spotlight: Aesthetic Dermatology</h3>
-            <div class="doctor-spec">Wilshire Boulevard Practice</div>
-            <p class="doctor-desc">Focusing on zero-downtime biostimulatory injectables, cellular collagen renewal, and customized red-carpet glow protocols.</p>
-            <button class="btn-gold" style="font-size: 0.7rem; padding: 0.4rem 0.8rem;" onclick="openModal('contactModal')">Inquire For Feature</button>
+          <div class="social-grid">
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=300&q=80');"></div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact-box">
-      <h2 style="font-family: Georgia, serif; font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Contact 90210Dr.com</h2>
-      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1rem auto;">Have a news tip, local event notice, or wish to inquire about an editorial physician spotlight feature? Reach out directly to our editorial desk.</p>
-
-      <div>
-        <a href="mailto:All4aim@hotmail.com" class="contact-email-link">All4aim@hotmail.com</a>
-      </div>
-
-      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Or click below to send a message directly to our team:</p>
-      <button class="btn-gold" style="margin-top: 1rem;" onclick="openModal('contactModal')">Contact Us Now</button>
-    </section>
-
-    <!-- Detailed Legal & Medical Disclaimer Section (Relocated to Bottom of Page) -->
-    <section class="legal-disclaimer-box">
-      <h4>Full Legal, Medical & Endorsement Disclaimer</h4>
-      <p>
-        The content presented on 90210Dr.com—including text, graphics, images, directories, doctor spotlights, and news reports—is published strictly for informational, educational, and entertainment purposes only. <strong>90210Dr.com is an independent digital media platform and is not a medical organization, healthcare provider, or licensed referral agency.</strong>
-      </p>
-      <p style="margin-top: 0.8rem;">
-        Nothing contained on this website is intended to be used as medical advice, diagnosis, or treatment recommendations. Always seek the advice of a qualified, board-certified physician or other licensed healthcare provider with any questions you may have regarding a medical condition or aesthetic procedure. Never disregard professional medical advice or delay in seeking it because of something you have read on 90210Dr.com.
-      </p>
-      <p style="margin-top: 0.8rem;">
-        <strong>No Endorsement or Guarantee:</strong> Reference to any specific plastic surgeon, dermatologist, doctor, dentist, medical spa, product, service, restaurant, or retail establishment does not constitute or imply endorsement, recommendation, or guarantee by 90210Dr.com. All users are strongly urged to conduct independent research and perform thorough due diligence before selecting any professional or business.
-      </p>
-    </section>
-  </main>
-
-  <!-- FULL ARTICLE MODALS -->
-
-  <!-- News Article 1 Modal -->
-  <div class="modal-overlay" id="newsModal1">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('newsModal1')">&times;</button>
-      <div class="article-modal-meta">City Hall • Civic & Safety</div>
-      <h2 class="article-modal-title">Beverly Hills Approves New Security Infrastructure Upgrades</h2>
-      <div class="article-modal-content">
-        <p><b>BEVERLY HILLS, CA</b> — The Beverly Hills City Council unanimously passed a series of comprehensive security and municipal infrastructure enhancements today aimed at bolstering safety across the Golden Triangle, Rodeo Drive, and adjacent residential sectors.</p>
-        <p>The approved measure allocates funding for state-of-the-art optical surveillance integrations, expanded private security ambassador patrols, and automated license plate recognition systems along major municipal thoroughfares including Wilshire, Santa Monica, and Sunset Boulevards.</p>
-        <p>Community leaders and luxury business managers welcomed the council's decisive action. "Beverly Hills remains dedicated to maintaining an unrivaled standard of security and peace of mind for our residents, business owners, and visiting international guests," noted city representatives during the council session.</p>
-        <p>Implementation of the hardware and patrol expansions is scheduled to begin immediately, with full operational integration expected prior to the upcoming autumn gala season.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- News Article 2 Modal -->
-  <div class="modal-overlay" id="newsModal2">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('newsModal2')">&times;</button>
-      <div class="article-modal-meta">Society & Real Estate</div>
-      <h2 class="article-modal-title">Inside the Off-Market Estate Deals Shaping North Carolwood Drive</h2>
-      <div class="article-modal-content">
-        <p><b>BEVERLY HILLS, CA</b> — While public real estate listings offer a glimpse into luxury residential markets, the most significant property transfers in 90210 continue occurring discreetly behind closed doors.</p>
-        <p>Recent county property transfer filings reveal a series of landmark off-market estate sales along North Carolwood and Sunset Boulevard, including a storied $42M architectural compound acquired by an undisclosed media mogul.</p>
-        <p>Local estate directors note that high-net-worth buyers increasingly prioritize private acquisitions involving non-disclosure agreements, direct legal representation, and pre-vetted private showings. Demand for gated compounds with multi-structure guest quarters and private wellness suites remains at record levels throughout Beverly Hills proper.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- News Article 3 Modal -->
-  <div class="modal-overlay" id="newsModal3">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('newsModal3')">&times;</button>
-      <div class="article-modal-meta">Lifestyle & Aesthetic Science</div>
-      <h2 class="article-modal-title">How Entertainment Leaders Prep 72 Hours Before Major Galas</h2>
-      <div class="article-modal-content">
-        <p><b>BEVERLY HILLS, CA</b> — As major awards shows and charity galas approach, the schedule for top aesthetic dermatologists and facialists along Bedford and Rodeo Drives becomes tightly choreographed.</p>
-        <p>The focus during the 72-hour pre-event window shifts entirely to zero-downtime therapies designed to maximize skin luminosity and facial contouring under high-definition camera lighting. Leading protocols include multi-wavelength LED therapy, micro-current facial sculpting, and specialized vascular laser treatments to resolve redness.</p>
-        <p>"The goal in the final days before a red-carpet appearance is zero inflammation, maximum hydration, and sharp structural contouring," explains local aesthetic specialists. Paired with targeted lymphatic drainage and hydration infusions, talent leaves the clinic camera-ready without recovery delay.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Dining Modal 1 -->
-  <div class="modal-overlay" id="diningModal1">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('diningModal1')">&times;</button>
-      <div class="article-modal-meta">Power Dining • Canon Drive & Wilshire</div>
-      <h2 class="article-modal-title">The Power Tables: Where Deals Are Closed Over Lunch</h2>
-      <div class="article-modal-content">
-        <p><b>BEVERLY HILLS, CA</b> — Midday dining in 90210 remains a cornerstone of Hollywood dealmaking and high-society networking. Our editorial team spotlights the most coveted tables across Beverly Hills institutions:</p>
-        <p><b>• Spago Beverly Hills (Canon Drive):</b> Table 12 on the covered patio remains the quintessential studio head seat, offering optimal privacy and visibility.</p>
-        <p><b>• Cipriani Beverly Hills (Wilshire Blvd):</b> The corner banquettes provide an elegant backdrop for executive lunches accompanied by classic Venetian service.</p>
-        <p><b>• Funke (Canon Drive):</b> Chef Evan Funke's multi-level culinary temple features a top-floor rooftop lounge highly favored for evening celebratory toasts and private buyouts.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Dining Modal 2 -->
-  <div class="modal-overlay" id="diningModal2">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('diningModal2')">&times;</button>
-      <div class="article-modal-meta">Private Lounges • Sunset Blvd</div>
-      <h2 class="article-modal-title">The Polo Lounge & Beverly Hills Hotel After-Hours</h2>
-      <div class="article-modal-content">
-        <p><b>BEVERLY HILLS, CA</b> — Known affectionately as the "Pink Palace," The Beverly Hills Hotel and its iconic Polo Lounge remain timeless sanctuaries for entertainment royalty and international leaders.</p>
-        <p>Evening culture at the Polo Lounge centers around intimate booth seating, live piano accompaniment, and classic hospitality protocols that have defined Beverly Hills nightlife for over eight decades. Private valet access and discreet security corridors ensure complete privacy for elevated guests.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact Modal -->
-  <div class="modal-overlay" id="contactModal">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
-      <h2 style="font-family: Georgia, serif; color: #fff; margin-bottom: 0.4rem;">Contact Editorial Desk</h2>
-      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Send a message to <b>All4aim@hotmail.com</b> regarding news tips, dining notices, or doctor features.</p>
-
-      <form action="mailto:All4aim@hotmail.com" method="post" enctype="text/plain">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" name="Name" placeholder="Full Name or Practice Name" required />
+        <!-- Social Pulse Widget 2 -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">SOCIAL PULSE</h3>
+          <div style="font-size: 0.8rem; margin-bottom: 0.8rem; color: #555; display: flex; align-items: center; gap: 0.4rem;">
+            <strong>#90210DR</strong>
+          </div>
+          <div class="social-grid">
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-color: #111; display: flex; align-items: center; justify-content: center; color: var(--gold-bar); font-size: 0.6rem; text-align: center; padding: 4px; font-weight: bold;">Beverly Hills</div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=300&q=80');"></div>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" name="Email" placeholder="yourname@domain.com" required />
-        </div>
-        <div class="form-group">
-          <label>Inquiry Type</label>
-          <select name="Inquiry_Type">
-            <option>Doctor Editorial Feature Inquiry</option>
-            <option>News Tip / Local Event</option>
-            <option>Dining / Hotspot Coverage</option>
-            <option>General Information</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea name="Message" rows="4" placeholder="Share details here..." required></textarea>
-        </div>
-        <button class="btn-gold" style="width: 100%;" type="submit">Send Message To All4aim@hotmail.com</button>
-      </form>
+      </aside>
+
     </div>
   </div>
 
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div class="footer-col">
-        <div class="brand-title" style="font-size: 1.4rem;">90210<span>DR</span>.com</div>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">The independent luxury digital briefing covering real-time Beverly Hills news, society dining, Rodeo Drive retail, and medical aesthetic science.</p>
-        <p style="margin-top: 1rem; color: var(--gold); font-weight: 700;">Direct Contact: All4aim@hotmail.com</p>
+      <div>
+        <strong>90210DR.com &copy; 2026</strong> | 
+        <span class="footer-links">
+          <a href="#">About</a> | 
+          <a href="mailto:All4aim@hotmail.com">Contact</a> | 
+          <a href="#">Advertise</a> | 
+          <a href="#">Privacy Policy</a>
+        </span>
       </div>
 
-      <div class="footer-col">
-        <h4 style="color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem;">Site Navigation</h4>
-        <ul style="list-style: none; line-height: 2; font-size: 0.8rem;">
-          <li><a href="#news" style="color: var(--text-muted); text-decoration: none;">News Desk</a></li>
-          <li><a href="#dining" style="color: var(--text-muted); text-decoration: none;">Dining & Hotspots</a></li>
-          <li><a href="#rodeo" style="color: var(--text-muted); text-decoration: none;">Rodeo Drive Retail</a></li>
-          <li><a href="#doctors" style="color: var(--text-muted); text-decoration: none;">Doctor Roster</a></li>
-          <li><a href="mailto:All4aim@hotmail.com" style="color: var(--gold); text-decoration: none;">Contact Us Now</a></li>
-        </ul>
+      <div class="sponsor-logos">
+        <span class="sponsor-badge">Rodeo Dr</span>
+        <span class="sponsor-badge">BH Council</span>
+        <span class="sponsor-badge">Beverly Hills</span>
       </div>
-
-      <div class="footer-col">
-        <h4 style="color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem;">Editorial Disclosure</h4>
-        <p style="font-size: 0.75rem; color: var(--text-muted);">
-          90210Dr.com provides information for educational and news purposes only and does not offer medical advice or doctor endorsements. Always perform personal due diligence before selecting medical professionals.
-        </p>
-      </div>
-    </div>
-
-    <div style="max-width: 1280px; margin: 2rem auto 0 auto; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; text-align: center; font-size: 0.75rem; color: var(--text-muted);">
-      &copy; 2026 90210Dr.com. All rights reserved. Beverly Hills, CA. Contact: All4aim@hotmail.com
     </div>
   </footer>
 
-  <!-- Script for Modals -->
+  <!-- Contact Modal -->
+  <div id="modalContact" class="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modalContact')">&times;</button>
+      <h3 class="modal-title">Inquire for Editorial Feature</h3>
+      <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Direct line to 90210DR.com Editorial Desk.</p>
+      
+      <form onsubmit="event.preventDefault(); alert('Message sent to All4aim@hotmail.com'); closeModal('modalContact');">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" required placeholder="Dr. John Doe / Representative">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" required placeholder="name@domain.com">
+        </div>
+        <div class="form-group">
+          <label>Inquiry Type</label>
+          <input type="text" placeholder="Physician Spotlight / News Tip / Advertising">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="4" required placeholder="Provide details here..."></textarea>
+        </div>
+        <button type="submit" class="btn-gold-sm" style="width: 100%; padding: 0.7rem;">Submit Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Story Modal 1 -->
+  <div id="modalStory1" class="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modalStory1')">&times;</button>
+      <h3 class="modal-title">Inside: The Summer's Most Exclusive 90210 Parties</h3>
+      <p style="font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 1rem;">
+        As awards season preparation begins across Beverly Hills, elite hosts across Trousdale Estates and Carolwood Drive have opened their private gates for charity galas and exclusive cocktail hours. From private dining alcoves attended by studio heads to courtyard champagne receptions on Bedford Drive, high society in 90210 continues to setting global lifestyle standards.
+      </p>
+      <button class="btn-gold-sm" onclick="closeModal('modalStory1')">Close Article</button>
+    </div>
+  </div>
+
+  <!-- Story Modal 2 -->
+  <div id="modalStory2" class="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modalStory2')">&times;</button>
+      <h3 class="modal-title">Where to Dine: Michelin Stars in Beverly Hills</h3>
+      <p style="font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 1rem;">
+        Beverly Hills dining continues its reign as the premier culinary enclave on the West Coast. From the famous patio tables at Spago to private alcoves at Cipriani and Funke on Canon Drive, local power lunching remains an essential institution where entertainment deals and real estate partnerships are finalized daily.
+      </p>
+      <button class="btn-gold-sm" onclick="closeModal('modalStory2')">Close Article</button>
+    </div>
+  </div>
+
+  <!-- Story Modal 3 -->
+  <div id="modalStory3" class="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modalStory3')">&times;</button>
+      <h3 class="modal-title">Luxury Living: Hottest Properties on the Market</h3>
+      <p style="font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 1rem;">
+        Off-market trading and private residential sales remain exceptionally active in Beverly Hills proper. Multi-acre estates with city-to-ocean views in North Carolwood continue attracting international art collectors, venture founders, and film industry leaders.
+      </p>
+      <button class="btn-gold-sm" onclick="closeModal('modalStory3')">Close Article</button>
+    </div>
+  </div>
+
   <script>
     function openModal(id) {
       document.getElementById(id).classList.add('active');
-      document.body.style.overflow = 'hidden';
     }
 
     function closeModal(id) {
       document.getElementById(id).classList.remove('active');
-      document.body.style.overflow = 'auto';
     }
 
+    // Close on overlay click
     window.onclick = function(e) {
       if (e.target.classList.contains('modal-overlay')) {
         e.target.classList.remove('active');
-        document.body.style.overflow = 'auto';
       }
-    };
+    }
   </script>
 </body>
 </html>
