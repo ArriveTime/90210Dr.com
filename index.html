@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>90210Dr.com | The Pulse of Beverly Hills | News, Dining, Rodeo Drive & Aesthetics</title>
-  <meta name="title" content="90210Dr.com | The Pulse of Beverly Hills | News, Dining, Rodeo Drive & Aesthetics">
-  <meta name="description" content="Beverly Hills premier luxury publication covering local civic news, elite dining, Rodeo Drive retail flagships, real estate, and editorial spotlights on top aesthetic doctors.">
-  <meta name="keywords" content="Beverly Hills news, 90210Dr, Rodeo Drive shopping, Beverly Hills restaurants, Beverly Hills plastic surgery, Beverly Hills dermatologists, luxury real estate, 90210 news">
+  <title>BeverlyHillsFM.com | The Pulse of Beverly Hills | Live Audio, Local News, Rodeo Drive & Aesthetic Medicine</title>
+  <meta name="title" content="BeverlyHillsFM.com | The Pulse of Beverly Hills | Live Audio, Local News, Rodeo Drive & Aesthetic Medicine">
+  <meta name="description" content="Beverly Hills premier luxury digital broadcast and publication platform. Covering civic news, live streaming radio, podcasts, power dining, Rodeo Drive fashion, real estate, and doctor spotlights.">
+  <meta name="keywords" content="Beverly Hills FM, BeverlyHillsFM, Beverly Hills radio, Beverly Hills news, Rodeo Drive shopping, Beverly Hills podcasts, Beverly Hills doctors, Beverly Hills real estate, 90210 media">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="author" content="90210Dr.com Editorial Desk">
-  <link rel="canonical" href="https://90210dr.com/">
+  <meta name="author" content="BeverlyHillsFM.com Broadcast Desk">
+  <link rel="canonical" href="https://beverlyhillsfm.com/">
 
   <!-- Geo-Targeting Meta Tags -->
   <meta name="geo.region" content="US-CA">
@@ -19,20 +19,20 @@
   <meta name="geo.position" content="34.0736;-118.4004">
   <meta name="ICBM" content="34.0736, -118.4004">
 
-  <!-- Open Graph / Facebook / LinkedIn SEO Tags -->
+  <!-- Open Graph / Social Media Tags -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://90210dr.com/">
-  <meta property="og:title" content="90210Dr.com | The Pulse of Beverly Hills">
-  <meta property="og:description" content="Real-time municipal news, power dining hotspots, Rodeo Drive luxury flagships, and editorial spotlights on world-class aesthetic physicians.">
+  <meta property="og:url" content="https://beverlyhillsfm.com/">
+  <meta property="og:title" content="BeverlyHillsFM.com | The Pulse of Beverly Hills">
+  <meta property="og:description" content="Beverly Hills' exclusive digital broadcast network: live lounge audio, elite civic news, society podcasts, Rodeo Drive flagships, and medical aesthetic spotlights.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80">
-  <meta property="og:site_name" content="90210Dr.com">
+  <meta property="og:site_name" content="BeverlyHillsFM.com">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter SEO Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://90210dr.com/">
-  <meta name="twitter:title" content="90210Dr.com | The Pulse of Beverly Hills">
-  <meta name="twitter:description" content="Independent digital briefing covering real-time Beverly Hills news, society dining, Rodeo Drive retail, and medical aesthetic science.">
+  <meta name="twitter:url" content="https://beverlyhillsfm.com/">
+  <meta name="twitter:title" content="BeverlyHillsFM.com | The Pulse of Beverly Hills">
+  <meta name="twitter:description" content="The sound and pulse of 90210. Real-time news, live luxury audio streaming, executive podcasts, and aesthetic doctor features.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80">
 
   <!-- Structured Data JSON-LD Schema for Search Engines -->
@@ -41,13 +41,13 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "NewsMediaOrganization",
-        "@id": "https://90210dr.com/#organization",
-        "name": "90210Dr.com",
-        "url": "https://90210dr.com",
-        "logo": "https://90210dr.com/logo.png",
+        "@type": "RadioStation",
+        "@id": "https://beverlyhillsfm.com/#station",
+        "name": "BeverlyHillsFM.com",
+        "url": "https://beverlyhillsfm.com",
+        "logo": "https://beverlyhillsfm.com/logo.png",
         "email": "All4aim@hotmail.com",
-        "description": "The pulse of Beverly Hills: real-time civic news, luxury dining, Rodeo Drive shopping, and aesthetic doctor spotlights.",
+        "description": "The Pulse of Beverly Hills: Digital audio broadcast, local news, podcasts, dining guides, and medical aesthetic features.",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Beverly Hills",
@@ -58,11 +58,11 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://90210dr.com/#website",
-        "url": "https://90210dr.com",
-        "name": "90210Dr.com",
+        "@id": "https://beverlyhillsfm.com/#website",
+        "url": "https://beverlyhillsfm.com",
+        "name": "BeverlyHillsFM.com",
         "publisher": {
-          "@id": "https://90210dr.com/#organization"
+          "@id": "https://beverlyhillsfm.com/#station"
         }
       }
     ]
@@ -84,6 +84,7 @@
       --border-color: #e2e2e0;
       --disclaimer-bg: #f4f3ef;
       --disclaimer-border: #b38e46;
+      --broadcast-red: #d32f2f;
     }
 
     * {
@@ -109,10 +110,15 @@
       text-transform: uppercase;
       padding: 0.4rem 2rem;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
-      gap: 1.5rem;
       font-weight: 600;
+    }
+
+    .top-utility-right {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
     }
 
     .top-utility-bar a {
@@ -125,10 +131,10 @@
       opacity: 0.8;
     }
 
-    /* Header Logo Area */
+    /* Header Logo & Live Radio Control Area */
     header.main-header {
       background-color: var(--bg-white);
-      padding: 1.8rem 2rem;
+      padding: 1.5rem 2rem;
       border-bottom: 1px solid var(--border-color);
     }
 
@@ -138,6 +144,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .brand {
@@ -147,7 +155,7 @@
 
     .brand-title {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 2.8rem;
+      font-size: 2.7rem;
       font-weight: 900;
       letter-spacing: -0.02em;
       color: #1a2332;
@@ -164,32 +172,78 @@
       letter-spacing: 0.38em;
       text-transform: uppercase;
       display: block;
-      margin-top: 4px;
-      font-weight: 600;
+      margin-top: 5px;
+      font-weight: 700;
     }
 
-    /* Search Box */
-    .search-box {
+    /* Header Radio Player Widget */
+    .header-player {
+      background: #f4f3ef;
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--gold-bar);
+      padding: 0.6rem 1.2rem;
+      border-radius: 3px;
       display: flex;
       align-items: center;
+      gap: 1rem;
     }
 
-    .search-box input {
-      padding: 0.45rem 0.8rem;
-      border: 1px solid #ccc;
-      font-size: 0.85rem;
-      outline: none;
-      width: 180px;
-      background: #fafafa;
+    .live-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--broadcast-red);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    .search-box button {
-      background: #eee;
-      border: 1px solid #ccc;
-      border-left: none;
-      padding: 0.45rem 0.7rem;
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--broadcast-red);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(211, 47, 47, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+    }
+
+    .player-track-info {
+      font-size: 0.78rem;
+    }
+
+    .player-track-title {
+      font-weight: 700;
+      color: #111;
+    }
+
+    .player-track-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .btn-play {
+      background: var(--navy-top);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
       cursor: pointer;
-      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-play:hover {
+      background: var(--gold-bar);
     }
 
     /* Navigation Bar */
@@ -212,11 +266,11 @@
     .nav-link {
       color: #ffffff;
       text-decoration: none;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.85rem 1.1rem;
+      padding: 0.85rem 1rem;
       display: inline-block;
       transition: background-color 0.2s, color 0.2s;
       white-space: nowrap;
@@ -232,7 +286,7 @@
       font-size: 0.8rem;
     }
 
-    /* Live News Ticker */
+    /* Live Broadcast & News Ticker */
     .ticker-wrap {
       width: 100%;
       background: #111;
@@ -261,7 +315,7 @@
     .ticker {
       display: flex;
       white-space: nowrap;
-      animation: ticker 35s linear infinite;
+      animation: ticker 38s linear infinite;
     }
 
     .ticker-item {
@@ -299,7 +353,7 @@
     .hero-banner {
       position: relative;
       height: 420px;
-      background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1400&q=80');
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1400&q=80');
       background-size: cover;
       background-position: center;
       border-radius: 2px;
@@ -314,13 +368,26 @@
     .hero-content {
       color: #ffffff;
       text-align: center;
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold-bar);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 0.8rem;
+      border-radius: 2px;
     }
 
     .hero-title {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       font-weight: 400;
       letter-spacing: 0.02em;
       text-shadow: 1px 2px 4px rgba(0,0,0,0.8);
@@ -348,7 +415,7 @@
 
     .section-title {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -382,6 +449,22 @@
       background-size: cover;
       background-position: center;
       position: relative;
+    }
+
+    .audio-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(10, 25, 47, 0.9);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
     .story-body {
@@ -428,6 +511,74 @@
       color: var(--gold-dark);
     }
 
+    /* Podcast / On-Demand Audio Grid */
+    .podcast-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .podcast-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .podcast-thumb {
+      width: 90px;
+      height: 90px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 2px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .podcast-info h4 {
+      font-family: Georgia, serif;
+      font-size: 0.98rem;
+      color: #111;
+      margin-bottom: 0.2rem;
+    }
+
+    .podcast-meta {
+      font-size: 0.72rem;
+      color: var(--gold-bar);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .podcast-desc {
+      font-size: 0.78rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-listen-sm {
+      background: var(--navy-top);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-listen-sm:hover {
+      background: var(--gold-bar);
+    }
+
     /* Sidebar Styling */
     .sidebar-widget {
       background: #ffffff;
@@ -467,6 +618,34 @@
 
     .social-thumb:hover {
       opacity: 0.85;
+    }
+
+    /* Schedule Widget */
+    .schedule-list {
+      list-style: none;
+    }
+
+    .schedule-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed var(--border-color);
+      font-size: 0.8rem;
+    }
+
+    .schedule-item:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-time {
+      font-weight: 700;
+      color: var(--gold-bar);
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+    }
+
+    .schedule-show {
+      font-weight: 600;
+      color: #111;
     }
 
     /* Rodeo Drive Section */
@@ -597,7 +776,7 @@
     .contact-banner p {
       font-size: 0.88rem;
       color: #ccc;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto 1.2rem auto;
     }
 
@@ -730,11 +909,16 @@
       color: #333;
     }
 
-    .form-group input, .form-group textarea {
+    .form-group input, .form-group textarea, .form-group select {
       width: 100%;
       padding: 0.6rem;
       border: 1px solid #ccc;
       border-radius: 2px;
+    }
+
+    /* Audio Player Audio Tag hidden */
+    audio {
+      display: none;
     }
 
     /* Responsive Design */
@@ -742,13 +926,13 @@
       .layout-grid {
         grid-template-columns: 1fr;
       }
-      .story-grid, .rodeo-grid {
+      .story-grid, .rodeo-grid, .podcast-row {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 600px) {
-      .story-grid, .rodeo-grid {
+      .story-grid, .rodeo-grid, .podcast-row {
         grid-template-columns: 1fr;
       }
       .brand-title {
@@ -759,33 +943,52 @@
         font-size: 0.72rem;
       }
       .top-utility-bar {
-        justify-content: center;
+        flex-direction: column;
+        gap: 0.4rem;
+        text-align: center;
       }
       .hero-title {
         font-size: 1.6rem;
+      }
+      .header-content {
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Hidden HTML5 Audio Player for Demo Live Audio Stream -->
+  <audio id="liveAudio" src="https://stream.zeno.fm/f3wvbbqmdg8uv" preload="none"></audio>
+
   <!-- Top Utility Bar -->
   <div class="top-utility-bar">
-    <div>LOS ANGELES, CA | OCTOBER 26, 2026</div>
-    <div><a href="mailto:All4aim@hotmail.com">LOGIN / CONTACT</a></div>
+    <div>BEVERLY HILLS, CA • DIGITAL BROADCAST & MEDIA DESK</div>
+    <div class="top-utility-right">
+      <span>FREQUENCY: DIGITAL 90210</span>
+      <a href="mailto:All4aim@hotmail.com">STUDIO CONTACT</a>
+    </div>
   </div>
 
-  <!-- Header Logo Area -->
+  <!-- Header Logo & Radio Controls Area -->
   <header class="main-header">
     <div class="header-content">
       <a href="#" class="brand">
-        <span class="brand-title">90210<span>DR</span>.com</span>
+        <span class="brand-title">BeverlyHills<span>FM</span>.com</span>
         <span class="brand-sub">THE PULSE OF BEVERLY HILLS</span>
       </a>
 
-      <div class="search-box">
-        <input type="text" placeholder="Search...">
-        <button>&#128091;</button>
+      <!-- Embedded Audio Player Widget -->
+      <div class="header-player">
+        <div class="live-indicator">
+          <div class="pulse-dot"></div>
+          LIVE AIR
+        </div>
+        <div class="player-track-info">
+          <div class="player-track-title">90210 Lounge & Civic Briefings</div>
+          <div class="player-track-subtitle">High-Definition Digital Stream</div>
+        </div>
+        <button class="btn-play" id="playBtn" onclick="toggleAudio()" title="Listen Live">&#9654;</button>
       </div>
     </div>
   </header>
@@ -795,36 +998,34 @@
     <div class="nav-container">
       <a href="#" class="nav-link active">HOME</a>
       <span class="nav-divider">|</span>
+      <a href="#podcasts" class="nav-link">PODCASTS / AUDIO</a>
+      <span class="nav-divider">|</span>
       <a href="#news" class="nav-link">EXCLUSIVE NEWS</a>
       <span class="nav-divider">|</span>
-      <a href="#news" class="nav-link">EVENTS</a>
-      <span class="nav-divider">|</span>
-      <a href="#dining" class="nav-link">DINING</a>
+      <a href="#dining" class="nav-link">DINING & NIGHTLIFE</a>
       <span class="nav-divider">|</span>
       <a href="#news" class="nav-link">REAL ESTATE</a>
       <span class="nav-divider">|</span>
-      <a href="#rodeo" class="nav-link">FASHION</a>
+      <a href="#rodeo" class="nav-link">RODEO DRIVE FASHION</a>
       <span class="nav-divider">|</span>
-      <a href="#dining" class="nav-link">NIGHTLIFE</a>
+      <a href="#doctors" class="nav-link">AESTHETICS & DOCTORS</a>
       <span class="nav-divider">|</span>
-      <a href="#doctors" class="nav-link">DIRECTORY</a>
-      <span class="nav-divider">|</span>
-      <a href="#doctors" class="nav-link">WELLNESS</a>
+      <a href="#news" class="nav-link">EVENTS & GALAS</a>
     </div>
   </nav>
 
-  <!-- Live News Ticker -->
+  <!-- Live News & Audio Ticker -->
   <div class="ticker-wrap">
-    <div class="ticker-head">Live 90210 Updates</div>
+    <div class="ticker-head">BeverlyHillsFM Wire</div>
     <div class="ticker">
-      <div class="ticker-item"><span>[CIVIC]</span> City Council reviews enhanced safety measures for Golden Triangle commercial district.</div>
-      <div class="ticker-item"><span>[DINING]</span> Private dining room bookings double at Canon Drive power lunch spots.</div>
+      <div class="ticker-item"><span>[ON AIR]</span> The 90210 Power Hour Podcast drops Episode 14 featuring top Wilshire Blvd plastic surgeons.</div>
+      <div class="ticker-item"><span>[CIVIC]</span> City Council reviews enhanced security patrols across Golden Triangle luxury corridors.</div>
+      <div class="ticker-item"><span>[DINING]</span> Private dining room bookings double at Canon Drive power spots.</div>
       <div class="ticker-item"><span>[RODEO]</span> Chanel flagship expands private salon quarters for VIP styling.</div>
-      <div class="ticker-item"><span>[REAL ESTATE]</span> Historic Carolwood Drive estate transferred in $42M off-market deal.</div>
-      <div class="ticker-item"><span>[AESTHETICS]</span> Pre-awards season zero-downtime laser treatments surge in demand.</div>
-      <!-- Duplicate for continuous scrolling -->
-      <div class="ticker-item"><span>[CIVIC]</span> City Council reviews enhanced safety measures for Golden Triangle commercial district.</div>
-      <div class="ticker-item"><span>[DINING]</span> Private dining room bookings double at Canon Drive power lunch spots.</div>
+      <div class="ticker-item"><span>[REAL ESTATE]</span> Historic Carolwood Drive estate transferred in $42M off-market transaction.</div>
+      <!-- Duplicate for continuous scroll -->
+      <div class="ticker-item"><span>[ON AIR]</span> The 90210 Power Hour Podcast drops Episode 14 featuring top Wilshire Blvd plastic surgeons.</div>
+      <div class="ticker-item"><span>[CIVIC]</span> City Council reviews enhanced security patrols across Golden Triangle luxury corridors.</div>
     </div>
   </div>
 
@@ -837,35 +1038,69 @@
         <!-- Hero Banner -->
         <section class="hero-banner">
           <div class="hero-content">
-            <h1 class="hero-title">EXPERIENCE THE PULSE:</h1>
-            <p class="hero-subtitle">The Ultimate Guide to the 90210</p>
+            <span class="hero-tag">Broadcast & Luxury Publication</span>
+            <h1 class="hero-title">THE PULSE OF BEVERLY HILLS</h1>
+            <p class="hero-subtitle">Civic News, Live Lounge Audio, Rodeo Drive Luxury & Aesthetic Science</p>
           </div>
         </section>
 
-        <!-- Featured Stories Section -->
+        <!-- On-Demand Audio & Podcast Section -->
+        <section id="podcasts">
+          <div class="section-title-wrap">
+            <h2 class="section-title">BEVERLY HILLS FM PODCASTS & AUDIO FEEDS</h2>
+          </div>
+
+          <div class="podcast-row">
+            <div class="podcast-card">
+              <div class="podcast-thumb" style="background-image: url('https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=300&q=80');"></div>
+              <div class="podcast-info">
+                <div class="podcast-meta">EP. 24 • AESTHETIC SCIENCE</div>
+                <h4>The Aesthetic Doctors of 90210</h4>
+                <p class="podcast-desc">Deep-plane facelift innovations and non-invasive laser breakthroughs.</p>
+                <button class="btn-listen-sm" onclick="openModal('modalPodcast')">&#9654; Listen (24 mins)</button>
+              </div>
+            </div>
+
+            <div class="podcast-card">
+              <div class="podcast-thumb" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=300&q=80');"></div>
+              <div class="podcast-info">
+                <div class="podcast-meta">EP. 18 • REAL ESTATE INSIGHTS</div>
+                <h4>Trousdale & Carolwood Off-Market Deals</h4>
+                <p class="podcast-desc">Top brokers discuss high-stakes property transactions in Beverly Hills.</p>
+                <button class="btn-listen-sm" onclick="openModal('modalPodcast')">&#9654; Listen (31 mins)</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured News Stories Section -->
         <section id="news">
           <div class="section-title-wrap">
-            <h2 class="section-title">FEATURED STORIES</h2>
+            <h2 class="section-title">FEATURED EDITORIAL STORIES</h2>
           </div>
 
           <div class="story-grid">
             <!-- Story 1 -->
             <article class="story-card">
-              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80');"></div>
+              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80');">
+                <span class="audio-badge"><span>&#127911;</span> AUDIO BRIEF</span>
+              </div>
               <div class="story-body">
-                <a href="javascript:void(0)" onclick="openModal('modalStory1')" class="story-headline">Inside: The Summer's Most Exclusive 90210 Parties</a>
-                <p class="story-excerpt">A rare look inside private galas, charity dinners, and secret estate gatherings shaping Beverly Hills high society.</p>
-                <a href="javascript:void(0)" onclick="openModal('modalStory1')" class="btn-read">Read Article &rarr;</a>
+                <a href="javascript:void(0)" onclick="openModal('modalStory1')" class="story-headline">Inside: The Summer's Most Exclusive 90210 Private Parties</a>
+                <p class="story-excerpt">A rare look inside private galas, charity dinners, and secret estate gatherings shaping Beverly Hills society.</p>
+                <a href="javascript:void(0)" onclick="openModal('modalStory1')" class="btn-read">Read & Listen &rarr;</a>
               </div>
             </article>
 
             <!-- Story 2 -->
             <article class="story-card">
-              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80');"></div>
+              <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80');">
+                <span class="audio-badge"><span>&#127911;</span> AUDIO BRIEF</span>
+              </div>
               <div class="story-body">
-                <a href="javascript:void(0)" onclick="openModal('modalStory2')" class="story-headline">Where to Dine: The New Michelin Stars in Beverly Hills</a>
-                <p class="story-excerpt">From Canon Drive to Wilshire, discover the top dining tables where deals are struck over world-class cuisine.</p>
-                <a href="javascript:void(0)" onclick="openModal('modalStory2')" class="btn-read">Read Article &rarr;</a>
+                <a href="javascript:void(0)" onclick="openModal('modalStory2')" class="story-headline">Where to Dine: The Michelin Tables of Canon & Wilshire</a>
+                <p class="story-excerpt">From Canon Drive to Wilshire Boulevard, discover top tables where power deals are finalized over fine dining.</p>
+                <a href="javascript:void(0)" onclick="openModal('modalStory2')" class="btn-read">Read & Listen &rarr;</a>
               </div>
             </article>
 
@@ -873,8 +1108,8 @@
             <article class="story-card">
               <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80');"></div>
               <div class="story-body">
-                <a href="javascript:void(0)" onclick="openModal('modalStory3')" class="story-headline">Luxury Living: The Hottest Properties Currently on the Market</a>
-                <p class="story-excerpt">An exclusive preview of prime Carolwood Drive and Trousdale Estates architectural masterpieces available today.</p>
+                <a href="javascript:void(0)" onclick="openModal('modalStory3')" class="story-headline">Luxury Estates: Prime Properties Available in Trousdale</a>
+                <p class="story-excerpt">Exclusive previews of architectural masterpieces currently listed in prime 90210 residential neighborhoods.</p>
                 <a href="javascript:void(0)" onclick="openModal('modalStory3')" class="btn-read">Read Article &rarr;</a>
               </div>
             </article>
@@ -884,15 +1119,15 @@
         <!-- VIP Dining & Hotspots Section -->
         <section id="dining">
           <div class="section-title-wrap">
-            <h2 class="section-title">VIP DINING & HOTSPOTS</h2>
+            <h2 class="section-title">VIP DINING & NIGHTLIFE</h2>
           </div>
 
           <div class="story-grid">
             <article class="story-card">
               <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=600&q=80');"></div>
               <div class="story-body">
-                <h3 class="story-headline">The Power Tables: Canon & Wilshire</h3>
-                <p class="story-excerpt">The preferred seating locations for entertainment executives and global investors.</p>
+                <h3 class="story-headline">The Power Lunch Enclaves</h3>
+                <p class="story-excerpt">The preferred patio seating locations for studio leaders and international investors.</p>
                 <a href="javascript:void(0)" onclick="openModal('modalContact')" class="btn-read">View Guide &rarr;</a>
               </div>
             </article>
@@ -900,8 +1135,8 @@
             <article class="story-card">
               <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80');"></div>
               <div class="story-body">
-                <h3 class="story-headline">The Polo Lounge After Hours</h3>
-                <p class="story-excerpt">An insider look into evening cocktails, discreet entryways, and legendary hotel lounges.</p>
+                <h3 class="story-headline">Late Night Lounge & Cocktails</h3>
+                <p class="story-excerpt">An insider look into evening cocktails, discreet entryways, and legendary hotel bars.</p>
                 <a href="javascript:void(0)" onclick="openModal('modalContact')" class="btn-read">View Guide &rarr;</a>
               </div>
             </article>
@@ -910,7 +1145,7 @@
               <div class="story-img" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80');"></div>
               <div class="story-body">
                 <h3 class="story-headline">Red Carpet Glow Protocols</h3>
-                <p class="story-excerpt">Non-invasive lymphatic prep and recovery protocols used 72 hours before galas.</p>
+                <p class="story-excerpt">Non-invasive prep treatments used by doctors 72 hours before major award galas.</p>
                 <a href="javascript:void(0)" onclick="openModal('modalContact')" class="btn-read">Read Article &rarr;</a>
               </div>
             </article>
@@ -920,7 +1155,7 @@
         <!-- Rodeo Drive Retail Directory Section -->
         <section id="rodeo">
           <div class="section-title-wrap">
-            <h2 class="section-title">RODEO DRIVE RETAIL & SHOPPING</h2>
+            <h2 class="section-title">RODEO DRIVE RETAIL & SHOPPING DIRECTORY</h2>
           </div>
 
           <div class="rodeo-box">
@@ -937,14 +1172,14 @@
                     <span class="rodeo-address">347 N Rodeo Dr • (310) 278-3451</span>
                   </li>
                   <li>
-                    <a href="https://www.louisvuitton.com" target="_blank" rel="noopener">Louis Vuitton</a>
+                    <a href="https://www.louisvuitton.com" target="_blank" rel="noopener">Louis Vuitton Flagship</a>
                     <span class="rodeo-address">295 N Rodeo Dr • (310) 859-0457</span>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h3 class="rodeo-cat-title">Fine Jewelry & Watches</h3>
+                <h3 class="rodeo-cat-title">Fine Jewelry & Timepieces</h3>
                 <ul class="rodeo-list">
                   <li>
                     <a href="https://www.cartier.com" target="_blank" rel="noopener">Cartier Beverly Hills</a>
@@ -982,18 +1217,18 @@
           </div>
         </section>
 
-        <!-- Doctor Roster & Spotlight Section -->
+        <!-- Doctor Roster & Aesthetic Spotlight Section -->
         <section id="doctors">
           <div class="section-title-wrap">
-            <h2 class="section-title">BEVERLY HILLS DOCTOR ROSTER</h2>
+            <h2 class="section-title">BEVERLY HILLS DOCTOR ROSTER & SPOTLIGHTS</h2>
           </div>
 
           <div class="doctor-card">
             <div class="doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80');"></div>
             <div class="doctor-info">
-              <h4>Facial Plastic Surgery Innovations</h4>
+              <h4>Facial Plastic Surgery & Deep Plane Restoration</h4>
               <div class="doctor-spec">Bedford Drive Medical Corridor</div>
-              <p class="doctor-desc">Highlighting non-invasive deep-plane facelift innovations and natural restoration techniques.</p>
+              <p class="doctor-desc">Highlighting non-invasive deep-plane facial techniques and structural aesthetic preservation.</p>
               <button class="btn-gold-sm" onclick="openModal('modalContact')">Inquire For Feature</button>
             </div>
           </div>
@@ -1001,37 +1236,61 @@
           <div class="doctor-card">
             <div class="doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1594824813566-788b15d0335e?auto=format&fit=crop&w=400&q=80');"></div>
             <div class="doctor-info">
-              <h4>Aesthetic Dermatology & Cellular Renewal</h4>
+              <h4>Aesthetic Dermatology & Cellular Collagen Renewal</h4>
               <div class="doctor-spec">Wilshire Boulevard Practice</div>
-              <p class="doctor-desc">Focusing on zero-downtime biostimulatory injectables and customized collagen glow treatments.</p>
+              <p class="doctor-desc">Focusing on zero-downtime laser protocols and customized skin health therapies.</p>
               <button class="btn-gold-sm" onclick="openModal('modalContact')">Inquire For Feature</button>
             </div>
           </div>
         </section>
 
-        <!-- Contact Banner -->
+        <!-- Contact & Media Inquiry Banner -->
         <section class="contact-banner">
-          <h3>Contact 90210Dr.com</h3>
-          <p>Have a news tip, high-society event notice, or wish to inquire about an editorial physician spotlight feature?</p>
+          <h3>Contact BeverlyHillsFM.com</h3>
+          <p>Have a news tip, podcast guest inquiry, event notice, or wish to inquire about an editorial physician or business spotlight feature?</p>
           <p><a href="mailto:All4aim@hotmail.com" class="contact-email">All4aim@hotmail.com</a></p>
-          <button class="btn-gold-sm" style="margin-top: 1rem; padding: 0.5rem 1.2rem; font-size: 0.8rem;" onclick="openModal('modalContact')">Send Message</button>
+          <button class="btn-gold-sm" style="margin-top: 1rem; padding: 0.5rem 1.2rem; font-size: 0.8rem;" onclick="openModal('modalContact')">Submit Studio Inquiry</button>
         </section>
 
-        <!-- Legal Disclaimer -->
+        <!-- Legal & Broadcast Disclaimer -->
         <section class="legal-disclaimer">
-          <h5>Full Legal, Medical & Endorsement Disclaimer</h5>
-          <p>The content presented on 90210Dr.com—including text, graphics, images, directories, doctor spotlights, and news reports—is published strictly for informational, educational, and entertainment purposes only. <strong>90210Dr.com is an independent digital media platform and is not a medical organization, healthcare provider, or licensed referral agency.</strong> Nothing contained on this website is intended to be used as medical advice, diagnosis, or treatment recommendations. Always seek the advice of a qualified, board-certified physician or other licensed healthcare provider with any questions you may have regarding a medical condition or aesthetic procedure.</p>
+          <h5>Full Legal, Medical & Broadcast Disclaimer</h5>
+          <p>The content, audio broadcasts, podcasts, news summaries, directories, and medical spotlights on BeverlyHillsFM.com are provided strictly for general informational, educational, and entertainment purposes. <strong>BeverlyHillsFM.com is an independent digital broadcast publication and media platform and is not a healthcare provider or licensed medical agency.</strong> Nothing on this platform constitutes medical advice or endorsement. Always consult a board-certified physician for medical guidance.</p>
         </section>
 
       </main>
 
       <!-- Sidebar -->
       <aside>
+        
+        <!-- Daily Broadcast Schedule Widget -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">&#128251; AIR SCHEDULE</h3>
+          <ul class="schedule-list">
+            <li class="schedule-item">
+              <span class="schedule-time">08:00 AM - 10:00 AM</span>
+              <span class="schedule-show">Beverly Hills Morning Civic Wire</span>
+            </li>
+            <li class="schedule-item">
+              <span class="schedule-time">12:00 PM - 01:30 PM</span>
+              <span class="schedule-show">The Power Lunch: Canon & Rodeo</span>
+            </li>
+            <li class="schedule-item">
+              <span class="schedule-time">03:00 PM - 04:30 PM</span>
+              <span class="schedule-show">Aesthetic Science & Medical Hour</span>
+            </li>
+            <li class="schedule-item">
+              <span class="schedule-time">08:00 PM - LATE</span>
+              <span class="schedule-show">90210 Ambient Lounge Audio</span>
+            </li>
+          </ul>
+        </div>
+
         <!-- Social Pulse Widget 1 -->
         <div class="sidebar-widget">
           <h3 class="widget-title">SOCIAL PULSE</h3>
-          <div style="font-size: 0.8rem; margin-bottom: 0.8rem; color: #555; display: flex; align-items: center; gap: 0.4rem;">
-            <strong>Instagram</strong> <span style="color: #888;">#90210DR</span>
+          <div style="font-size: 0.8rem; margin-bottom: 0.8rem; color: #555;">
+            <strong>Instagram</strong> <span style="color: #888;">#BeverlyHillsFM</span>
           </div>
           <div class="social-grid">
             <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=300&q=80');"></div>
@@ -1040,27 +1299,25 @@
             <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=300&q=80');"></div>
             <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=300&q=80');"></div>
             <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=300&q=80');"></div>
-            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=300&q=80');"></div>
-            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=300&q=80');"></div>
-            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=300&q=80');"></div>
           </div>
         </div>
 
         <!-- Social Pulse Widget 2 -->
         <div class="sidebar-widget">
-          <h3 class="widget-title">SOCIAL PULSE</h3>
-          <div style="font-size: 0.8rem; margin-bottom: 0.8rem; color: #555; display: flex; align-items: center; gap: 0.4rem;">
-            <strong>#90210DR</strong>
+          <h3 class="widget-title">AUDIO ARCHIVE</h3>
+          <div style="font-size: 0.8rem; margin-bottom: 0.8rem; color: #555;">
+            <strong>#90210Pulse</strong>
           </div>
           <div class="social-grid">
             <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=300&q=80');"></div>
             <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=300&q=80');"></div>
-            <div class="social-thumb" style="background-color: #111; display: flex; align-items: center; justify-content: center; color: var(--gold-bar); font-size: 0.6rem; text-align: center; padding: 4px; font-weight: bold;">Beverly Hills</div>
+            <div class="social-thumb" style="background-color: #111; display: flex; align-items: center; justify-content: center; color: var(--gold-bar); font-size: 0.6rem; text-align: center; padding: 4px; font-weight: bold;">BEVERLY HILLS FM</div>
             <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=300&q=80');"></div>
             <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=300&q=80');"></div>
-            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=300&q=80');"></div>
+            <div class="social-thumb" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=300&q=80');"></div>
           </div>
         </div>
+
       </aside>
 
     </div>
@@ -1070,19 +1327,19 @@
   <footer>
     <div class="footer-content">
       <div>
-        <strong>90210DR.com &copy; 2026</strong> | 
+        <strong>BeverlyHillsFM.com &copy; 2026</strong> | 
         <span class="footer-links">
-          <a href="#">About</a> | 
-          <a href="mailto:All4aim@hotmail.com">Contact</a> | 
-          <a href="#">Advertise</a> | 
+          <a href="#">About Station</a> | 
+          <a href="mailto:All4aim@hotmail.com">Studio Contact</a> | 
+          <a href="#">Sponsor Rates</a> | 
           <a href="#">Privacy Policy</a>
         </span>
       </div>
 
       <div class="sponsor-logos">
+        <span class="sponsor-badge">Beverly Hills FM</span>
         <span class="sponsor-badge">Rodeo Dr</span>
-        <span class="sponsor-badge">BH Council</span>
-        <span class="sponsor-badge">Beverly Hills</span>
+        <span class="sponsor-badge">90210 Media</span>
       </div>
     </div>
   </footer>
@@ -1091,21 +1348,26 @@
   <div id="modalContact" class="modal-overlay">
     <div class="modal">
       <button class="modal-close" onclick="closeModal('modalContact')">&times;</button>
-      <h3 class="modal-title">Inquire for Editorial Feature</h3>
-      <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Direct line to 90210DR.com Editorial Desk.</p>
+      <h3 class="modal-title">BeverlyHillsFM Studio Inquiry</h3>
+      <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Contact our editorial, broadcast, or doctor spotlight team directly.</p>
       
       <form onsubmit="event.preventDefault(); alert('Message sent to All4aim@hotmail.com'); closeModal('modalContact');">
         <div class="form-group">
           <label>Full Name</label>
-          <input type="text" required placeholder="Dr. John Doe / Representative">
+          <input type="text" required placeholder="Name / Representative">
         </div>
         <div class="form-group">
           <label>Email Address</label>
           <input type="email" required placeholder="name@domain.com">
         </div>
         <div class="form-group">
-          <label>Inquiry Type</label>
-          <input type="text" placeholder="Physician Spotlight / News Tip / Advertising">
+          <label>Inquiry Category</label>
+          <select>
+            <option>Podcast Guest / Interview</option>
+            <option>Doctor Spotlight Feature</option>
+            <option>News Tip / Society Event</option>
+            <option>Sponsorship & Advertising</option>
+          </select>
         </div>
         <div class="form-group">
           <label>Message</label>
@@ -1116,13 +1378,25 @@
     </div>
   </div>
 
+  <!-- Podcast Modal -->
+  <div id="modalPodcast" class="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modalPodcast')">&times;</button>
+      <h3 class="modal-title">BeverlyHillsFM Podcast Series</h3>
+      <p style="font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 1rem;">
+        Episode listening preview: Join host discussions with leading Beverly Hills dermatologists, facial plastic surgeons, and aesthetic science innovators as they discuss non-invasive procedures, recovery protocols, and natural anti-aging solutions.
+      </p>
+      <button class="btn-gold-sm" onclick="closeModal('modalPodcast')">Close Preview</button>
+    </div>
+  </div>
+
   <!-- Story Modal 1 -->
   <div id="modalStory1" class="modal-overlay">
     <div class="modal">
       <button class="modal-close" onclick="closeModal('modalStory1')">&times;</button>
-      <h3 class="modal-title">Inside: The Summer's Most Exclusive 90210 Parties</h3>
+      <h3 class="modal-title">Inside: The Summer's Most Exclusive 90210 Private Parties</h3>
       <p style="font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 1rem;">
-        As awards season preparation begins across Beverly Hills, elite hosts across Trousdale Estates and Carolwood Drive have opened their private gates for charity galas and exclusive cocktail hours. From private dining alcoves attended by studio heads to courtyard champagne receptions on Bedford Drive, high society in 90210 continues to setting global lifestyle standards.
+        As awards season preparation begins across Beverly Hills, elite hosts across Trousdale Estates and Carolwood Drive have opened their private gates for charity galas and exclusive cocktail hours. From private dining alcoves attended by studio heads to courtyard champagne receptions on Bedford Drive, high society in 90210 continues to set global lifestyle standards.
       </p>
       <button class="btn-gold-sm" onclick="closeModal('modalStory1')">Close Article</button>
     </div>
@@ -1144,7 +1418,7 @@
   <div id="modalStory3" class="modal-overlay">
     <div class="modal">
       <button class="modal-close" onclick="closeModal('modalStory3')">&times;</button>
-      <h3 class="modal-title">Luxury Living: Hottest Properties on the Market</h3>
+      <h3 class="modal-title">Luxury Estates: Prime Properties Available in Trousdale</h3>
       <p style="font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 1rem;">
         Off-market trading and private residential sales remain exceptionally active in Beverly Hills proper. Multi-acre estates with city-to-ocean views in North Carolwood continue attracting international art collectors, venture founders, and film industry leaders.
       </p>
@@ -1153,6 +1427,27 @@
   </div>
 
   <script>
+    // Audio Player Logic
+    var audio = document.getElementById('liveAudio');
+    var playBtn = document.getElementById('playBtn');
+    var isPlaying = false;
+
+    function toggleAudio() {
+      if (isPlaying) {
+        audio.pause();
+        playBtn.innerHTML = '&#9654;';
+        isPlaying = false;
+      } else {
+        audio.play().then(function() {
+          playBtn.innerHTML = '&#10074;&#10074;';
+          isPlaying = true;
+        }).catch(function(e) {
+          alert('Click play again to start audio streaming.');
+        });
+      }
+    }
+
+    // Modal Control Functions
     function openModal(id) {
       document.getElementById(id).classList.add('active');
     }
