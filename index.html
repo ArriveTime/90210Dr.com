@@ -3,8 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
   <title>90210Dr.com | The Pulse of Beverly Hills | News, Dining, Rodeo Drive & Aesthetics</title>
-  <meta name="description" content="Beverly Hills premier luxury publication covering local civic news, elite dining, Rodeo Drive retail flagships, and editorial spotlight on top aesthetic doctors.">
+  <meta name="title" content="90210Dr.com | The Pulse of Beverly Hills | News, Dining, Rodeo Drive & Aesthetics">
+  <meta name="description" content="Beverly Hills premier luxury publication covering local civic news, elite dining, Rodeo Drive retail flagships, real estate, and editorial spotlights on top aesthetic doctors.">
+  <meta name="keywords" content="Beverly Hills news, 90210Dr, Rodeo Drive shopping, Beverly Hills restaurants, Beverly Hills plastic surgery, Beverly Hills dermatologists, luxury real estate, 90210 news">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="90210Dr.com Editorial Desk">
+  <link rel="canonical" href="https://90210dr.com/">
+
+  <!-- Geo-Targeting Meta Tags -->
+  <meta name="geo.region" content="US-CA">
+  <meta name="geo.placename" content="Beverly Hills">
+  <meta name="geo.position" content="34.0736;-118.4004">
+  <meta name="ICBM" content="34.0736, -118.4004">
+
+  <!-- Open Graph / Facebook / LinkedIn SEO Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://90210dr.com/">
+  <meta property="og:title" content="90210Dr.com | The Pulse of Beverly Hills">
+  <meta property="og:description" content="Real-time municipal news, power dining hotspots, Rodeo Drive luxury flagships, and editorial spotlights on world-class aesthetic physicians.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:site_name" content="90210Dr.com">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter SEO Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://90210dr.com/">
+  <meta name="twitter:title" content="90210Dr.com | The Pulse of Beverly Hills">
+  <meta name="twitter:description" content="Independent digital briefing covering real-time Beverly Hills news, society dining, Rodeo Drive retail, and medical aesthetic science.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Structured Data JSON-LD Schema for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NewsMediaOrganization",
+        "@id": "https://90210dr.com/#organization",
+        "name": "90210Dr.com",
+        "url": "https://90210dr.com",
+        "logo": "https://90210dr.com/logo.png",
+        "email": "All4aim@hotmail.com",
+        "description": "The pulse of Beverly Hills: real-time civic news, luxury dining, Rodeo Drive shopping, and aesthetic doctor spotlights.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Beverly Hills",
+          "addressRegion": "CA",
+          "postalCode": "90210",
+          "addressCountry": "US"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://90210dr.com/#website",
+        "url": "https://90210dr.com",
+        "name": "90210Dr.com",
+        "publisher": {
+          "@id": "https://90210dr.com/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg-dark: #0a0a0b;
@@ -17,8 +81,8 @@
       --text-muted: #a1a1aa;
       --border: rgba(212, 175, 55, 0.25);
       --border-subtle: rgba(255, 255, 255, 0.08);
-      --disclaimer-bg: #1c1917;
-      --disclaimer-border: #854d0e;
+      --disclaimer-bg: #141210;
+      --disclaimer-border: #78350f;
     }
 
     * {
@@ -33,23 +97,6 @@
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
-    }
-
-    /* Disclaimer Top Banner */
-    .disclaimer-banner {
-      background: var(--disclaimer-bg);
-      border-bottom: 1px solid var(--disclaimer-border);
-      color: #fef08a;
-      padding: 0.6rem 1.5rem;
-      font-size: 0.75rem;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    .disclaimer-banner strong {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
 
     /* Header */
@@ -353,6 +400,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
+      cursor: pointer;
     }
 
     /* Rodeo Drive Directory Styling */
@@ -462,7 +510,7 @@
       margin-bottom: 1rem;
     }
 
-    /* Contact & Form Section */
+    /* Contact Section */
     .contact-box {
       background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, transparent 100%);
       border: 1px solid var(--border);
@@ -486,17 +534,38 @@
       color: var(--gold-light);
     }
 
-    /* Modal */
+    /* Detailed Legal Disclaimer Section (Bottom of Page) */
+    .legal-disclaimer-box {
+      background: var(--disclaimer-bg);
+      border: 1px solid var(--disclaimer-border);
+      border-radius: 6px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      font-size: 0.82rem;
+      color: #d1d5db;
+      line-height: 1.6;
+    }
+
+    .legal-disclaimer-box h4 {
+      color: var(--gold);
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Modals */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.88);
+      background: rgba(0, 0, 0, 0.90);
       backdrop-filter: blur(8px);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 200;
       padding: 1.5rem;
+      overflow-y: auto;
     }
 
     .modal-overlay.active {
@@ -507,10 +576,12 @@
       background: var(--bg-card);
       border: 1px solid var(--gold);
       border-radius: 8px;
-      max-width: 550px;
+      max-width: 650px;
       width: 100%;
       padding: 2.2rem;
       position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
     }
 
     .modal-close {
@@ -521,6 +592,30 @@
       color: var(--text-muted);
       font-size: 1.5rem;
       cursor: pointer;
+    }
+
+    .article-modal-meta {
+      color: var(--gold);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .article-modal-title {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .article-modal-content p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
     }
 
     .form-group {
@@ -551,26 +646,6 @@
 
     .form-group input:focus, .form-group textarea:focus {
       border-color: var(--gold);
-    }
-
-    /* Detailed Disclaimer Box */
-    .legal-disclaimer-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      padding: 2rem;
-      margin-bottom: 3rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .legal-disclaimer-box h4 {
-      color: var(--gold);
-      font-size: 0.9rem;
-      margin-bottom: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
 
     /* Footer */
@@ -605,11 +680,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Mandatory Legal & Medical Disclaimer Banner -->
-  <div class="disclaimer-banner">
-    <strong>Medical & Commercial Disclaimer:</strong> 90210Dr.com is an independent news, lifestyle, and information digital publication. We do not provide medical advice, diagnosis, or treatment. We do not endorse or recommend any specific doctors, surgeons, or businesses. Users are strictly advised to perform their own due diligence before selecting any healthcare provider.
-  </div>
 
   <!-- Header -->
   <header>
@@ -677,7 +747,7 @@
             <div class="card-meta">City Hall • Real-Time</div>
             <h3 class="card-title">Beverly Hills Approves New Security Infrastructure Upgrades</h3>
             <p class="card-text">Municipal officials announce expanded private patrol partnerships and camera network enhancements across Wilshire and Rodeo Drive corridors.</p>
-            <a href="#" class="card-link" onclick="alert('Full news article available in daily briefing.'); return false;">Read Full Story &rarr;</a>
+            <span class="card-link" onclick="openModal('newsModal1')">Read Full Story &rarr;</span>
           </div>
         </article>
 
@@ -690,7 +760,7 @@
             <div class="card-meta">Society & Living</div>
             <h3 class="card-title">Inside the Off-Market Estate Deals Shaping North Carolwood</h3>
             <p class="card-text">Hollywood studio executives and international collectors continue quietly trading trophy residential properties in Beverly Hills proper.</p>
-            <a href="#" class="card-link" onclick="alert('Full news article available in daily briefing.'); return false;">Read Full Story &rarr;</a>
+            <span class="card-link" onclick="openModal('newsModal2')">Read Full Story &rarr;</span>
           </div>
         </article>
 
@@ -703,7 +773,7 @@
             <div class="card-meta">Lifestyle & Science</div>
             <h3 class="card-title">How Entertainment Leaders Prep 72 Hours Before Major Galas</h3>
             <p class="card-text">A look at non-invasive lymphatic drainage, vascular lasers, and hyperbaric recovery protocols favored along Bedford Drive.</p>
-            <a href="#" class="card-link" onclick="alert('Full news article available in daily briefing.'); return false;">Read Full Story &rarr;</a>
+            <span class="card-link" onclick="openModal('newsModal3')">Read Full Story &rarr;</span>
           </div>
         </article>
       </div>
@@ -728,7 +798,7 @@
             <div class="card-meta">Canon Drive & Wilshire</div>
             <h3 class="card-title">The Power Tables: Where Deals Are Closed Over Lunch</h3>
             <p class="card-text">From Spago's patio to the private dining alcoves at Cipriani and Funke, we review the top seating locations preferred by entertainment agents and executives.</p>
-            <a href="#" class="card-link" onclick="alert('Hotspot guide saved.'); return false;">View Hotspot Guide &rarr;</a>
+            <span class="card-link" onclick="openModal('diningModal1')">View Hotspot Guide &rarr;</span>
           </div>
         </div>
 
@@ -741,7 +811,7 @@
             <div class="card-meta">Sunset Boulevard</div>
             <h3 class="card-title">The Polo Lounge & Beverly Hills Hotel After-Hours</h3>
             <p class="card-text">An insider guide to discreet evening gatherings, discreet security entrances, and timeless cocktail culture for high-society residents.</p>
-            <a href="#" class="card-link" onclick="alert('Hotspot guide saved.'); return false;">View Hotspot Guide &rarr;</a>
+            <span class="card-link" onclick="openModal('diningModal2')">View Hotspot Guide &rarr;</span>
           </div>
         </div>
       </div>
@@ -875,11 +945,11 @@
       <button class="btn-gold" style="margin-top: 1rem;" onclick="openModal('contactModal')">Contact Us Now</button>
     </section>
 
-    <!-- Detailed Legal Disclaimer Section -->
+    <!-- Detailed Legal & Medical Disclaimer Section (Relocated to Bottom of Page) -->
     <section class="legal-disclaimer-box">
       <h4>Full Legal, Medical & Endorsement Disclaimer</h4>
       <p>
-        The content presented on 90210Dr.com—including text, graphics, images, directories, doctor spotlights, and news reports—is published strictly for informational, educational, and entertainment purposes only. <strong>90210Dr.com is not a medical organization, healthcare provider, or licensed referral agency.</strong>
+        The content presented on 90210Dr.com—including text, graphics, images, directories, doctor spotlights, and news reports—is published strictly for informational, educational, and entertainment purposes only. <strong>90210Dr.com is an independent digital media platform and is not a medical organization, healthcare provider, or licensed referral agency.</strong>
       </p>
       <p style="margin-top: 0.8rem;">
         Nothing contained on this website is intended to be used as medical advice, diagnosis, or treatment recommendations. Always seek the advice of a qualified, board-certified physician or other licensed healthcare provider with any questions you may have regarding a medical condition or aesthetic procedure. Never disregard professional medical advice or delay in seeking it because of something you have read on 90210Dr.com.
@@ -889,6 +959,79 @@
       </p>
     </section>
   </main>
+
+  <!-- FULL ARTICLE MODALS -->
+
+  <!-- News Article 1 Modal -->
+  <div class="modal-overlay" id="newsModal1">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('newsModal1')">&times;</button>
+      <div class="article-modal-meta">City Hall • Civic & Safety</div>
+      <h2 class="article-modal-title">Beverly Hills Approves New Security Infrastructure Upgrades</h2>
+      <div class="article-modal-content">
+        <p><b>BEVERLY HILLS, CA</b> — The Beverly Hills City Council unanimously passed a series of comprehensive security and municipal infrastructure enhancements today aimed at bolstering safety across the Golden Triangle, Rodeo Drive, and adjacent residential sectors.</p>
+        <p>The approved measure allocates funding for state-of-the-art optical surveillance integrations, expanded private security ambassador patrols, and automated license plate recognition systems along major municipal thoroughfares including Wilshire, Santa Monica, and Sunset Boulevards.</p>
+        <p>Community leaders and luxury business managers welcomed the council's decisive action. "Beverly Hills remains dedicated to maintaining an unrivaled standard of security and peace of mind for our residents, business owners, and visiting international guests," noted city representatives during the council session.</p>
+        <p>Implementation of the hardware and patrol expansions is scheduled to begin immediately, with full operational integration expected prior to the upcoming autumn gala season.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- News Article 2 Modal -->
+  <div class="modal-overlay" id="newsModal2">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('newsModal2')">&times;</button>
+      <div class="article-modal-meta">Society & Real Estate</div>
+      <h2 class="article-modal-title">Inside the Off-Market Estate Deals Shaping North Carolwood Drive</h2>
+      <div class="article-modal-content">
+        <p><b>BEVERLY HILLS, CA</b> — While public real estate listings offer a glimpse into luxury residential markets, the most significant property transfers in 90210 continue occurring discreetly behind closed doors.</p>
+        <p>Recent county property transfer filings reveal a series of landmark off-market estate sales along North Carolwood and Sunset Boulevard, including a storied $42M architectural compound acquired by an undisclosed media mogul.</p>
+        <p>Local estate directors note that high-net-worth buyers increasingly prioritize private acquisitions involving non-disclosure agreements, direct legal representation, and pre-vetted private showings. Demand for gated compounds with multi-structure guest quarters and private wellness suites remains at record levels throughout Beverly Hills proper.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- News Article 3 Modal -->
+  <div class="modal-overlay" id="newsModal3">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('newsModal3')">&times;</button>
+      <div class="article-modal-meta">Lifestyle & Aesthetic Science</div>
+      <h2 class="article-modal-title">How Entertainment Leaders Prep 72 Hours Before Major Galas</h2>
+      <div class="article-modal-content">
+        <p><b>BEVERLY HILLS, CA</b> — As major awards shows and charity galas approach, the schedule for top aesthetic dermatologists and facialists along Bedford and Rodeo Drives becomes tightly choreographed.</p>
+        <p>The focus during the 72-hour pre-event window shifts entirely to zero-downtime therapies designed to maximize skin luminosity and facial contouring under high-definition camera lighting. Leading protocols include multi-wavelength LED therapy, micro-current facial sculpting, and specialized vascular laser treatments to resolve redness.</p>
+        <p>"The goal in the final days before a red-carpet appearance is zero inflammation, maximum hydration, and sharp structural contouring," explains local aesthetic specialists. Paired with targeted lymphatic drainage and hydration infusions, talent leaves the clinic camera-ready without recovery delay.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dining Modal 1 -->
+  <div class="modal-overlay" id="diningModal1">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('diningModal1')">&times;</button>
+      <div class="article-modal-meta">Power Dining • Canon Drive & Wilshire</div>
+      <h2 class="article-modal-title">The Power Tables: Where Deals Are Closed Over Lunch</h2>
+      <div class="article-modal-content">
+        <p><b>BEVERLY HILLS, CA</b> — Midday dining in 90210 remains a cornerstone of Hollywood dealmaking and high-society networking. Our editorial team spotlights the most coveted tables across Beverly Hills institutions:</p>
+        <p><b>• Spago Beverly Hills (Canon Drive):</b> Table 12 on the covered patio remains the quintessential studio head seat, offering optimal privacy and visibility.</p>
+        <p><b>• Cipriani Beverly Hills (Wilshire Blvd):</b> The corner banquettes provide an elegant backdrop for executive lunches accompanied by classic Venetian service.</p>
+        <p><b>• Funke (Canon Drive):</b> Chef Evan Funke's multi-level culinary temple features a top-floor rooftop lounge highly favored for evening celebratory toasts and private buyouts.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dining Modal 2 -->
+  <div class="modal-overlay" id="diningModal2">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('diningModal2')">&times;</button>
+      <div class="article-modal-meta">Private Lounges • Sunset Blvd</div>
+      <h2 class="article-modal-title">The Polo Lounge & Beverly Hills Hotel After-Hours</h2>
+      <div class="article-modal-content">
+        <p><b>BEVERLY HILLS, CA</b> — Known affectionately as the "Pink Palace," The Beverly Hills Hotel and its iconic Polo Lounge remain timeless sanctuaries for entertainment royalty and international leaders.</p>
+        <p>Evening culture at the Polo Lounge centers around intimate booth seating, live piano accompaniment, and classic hospitality protocols that have defined Beverly Hills nightlife for over eight decades. Private valet access and discreet security corridors ensure complete privacy for elevated guests.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Contact Modal -->
   <div class="modal-overlay" id="contactModal">
@@ -947,7 +1090,7 @@
       <div class="footer-col">
         <h4 style="color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem;">Editorial Disclosure</h4>
         <p style="font-size: 0.75rem; color: var(--text-muted);">
-          90210Dr.com provides information for educational purposes only and does not offer medical advice or doctor endorsements. Always perform personal due diligence before selecting medical professionals.
+          90210Dr.com provides information for educational and news purposes only and does not offer medical advice or doctor endorsements. Always perform personal due diligence before selecting medical professionals.
         </p>
       </div>
     </div>
@@ -961,15 +1104,18 @@
   <script>
     function openModal(id) {
       document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeModal(id) {
       document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = 'auto';
     }
 
     window.onclick = function(e) {
       if (e.target.classList.contains('modal-overlay')) {
         e.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
       }
     };
   </script>
